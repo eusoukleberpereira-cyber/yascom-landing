@@ -1,6 +1,5 @@
 import { MessageCircle, ArrowRight } from "lucide-react";
-
-const WA_LINK = "https://wa.me/5541999112899";
+import { WA } from "@/lib/whatsapp";
 
 export function Hero() {
   return (
@@ -96,7 +95,7 @@ export function Hero() {
             {/* CTAs */}
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
               <a
-                href={WA_LINK}
+                href={WA.hero}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

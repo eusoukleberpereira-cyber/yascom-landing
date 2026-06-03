@@ -1,6 +1,5 @@
 import { MessageCircle, ArrowRight } from "lucide-react";
-
-const WA_LINK = "https://wa.me/5541999112899";
+import { WA } from "@/lib/whatsapp";
 
 export function CTAFinal() {
   return (
@@ -85,7 +84,7 @@ export function CTAFinal() {
 
           {/* CTA */}
           <a
-            href={WA_LINK}
+            href={WA.cta}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
