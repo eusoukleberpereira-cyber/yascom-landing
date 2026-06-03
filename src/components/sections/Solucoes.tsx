@@ -1,12 +1,12 @@
 import { Bot, LayoutDashboard, Layers, MessageCircle } from "lucide-react";
-
-const WA_LINK = "https://wa.me/5541999112899";
+import { WA } from "@/lib/whatsapp";
 
 const SOLUCOES = [
   {
     icon: Bot,
     tag: "Atendimento inteligente",
     titulo: "Agente de IA",
+    waLink: "agente" as const,
     descricao:
       "Atendimento automatizado que responde, qualifica leads e vende — 24 horas por dia, 7 dias por semana. Seu negócio nunca fecha.",
     destaques: [
@@ -20,6 +20,7 @@ const SOLUCOES = [
     icon: LayoutDashboard,
     tag: "Gestão sob medida",
     titulo: "CRM Personalizado",
+    waLink: "crm" as const,
     descricao:
       "Não é um CRM genérico. É um sistema construído do zero para o seu jeito de trabalhar, com os processos que fazem sentido para o seu negócio.",
     destaques: [
@@ -40,6 +41,7 @@ const SOLUCOES = [
       "Dados em tempo real",
       "Visão completa do cliente",
     ],
+    waLink: "completo" as const,
     destaque: true,
   },
 ];
@@ -224,7 +226,7 @@ export function Solucoes() {
                 </ul>
 
                 <a
-                  href={WA_LINK}
+                  href={WA[s.waLink]}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={s.destaque ? "btn-primary" : "btn-secondary"}
