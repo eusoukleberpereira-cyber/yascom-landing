@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
-
-const WA_LINK = "https://wa.me/5541999112899";
+import { WA } from "@/lib/whatsapp";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -65,7 +64,7 @@ export function Header() {
 
         {/* CTA Desktop */}
         <a
-          href={WA_LINK}
+          href={WA.header}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary"
@@ -105,7 +104,7 @@ export function Header() {
           id="mobile-menu"
         >
           <a
-            href={WA_LINK}
+            href={WA.header}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
