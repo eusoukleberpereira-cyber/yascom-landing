@@ -1,0 +1,133 @@
+{
+  "project": "YASCOM Landing Page",
+  "direction": "Ousadia Calculada",
+  "version": "1.0",
+
+  "colors": {
+    "background": {
+      "primary": "#F4F1EC",
+      "secondary": "#EDEAE3",
+      "dark": "#1C1C1C",
+      "white": "#FFFFFF"
+    },
+    "text": {
+      "primary": "#1C1C1C",
+      "secondary": "#5C5855",
+      "inverted": "#F4F1EC",
+      "muted": "#8C8784"
+    },
+    "accent": {
+      "primary": "#FF4B00",
+      "hover": "#E03E00",
+      "light": "#FFF0EB"
+    },
+    "border": {
+      "default": "#D9D5CE",
+      "strong": "#1C1C1C"
+    }
+  },
+
+  "typography": {
+    "display": {
+      "family": "Fraunces",
+      "weight": "900",
+      "style": "italic",
+      "usage": "Headlines principais, hero, títulos de seção"
+    },
+    "heading": {
+      "family": "Fraunces",
+      "weight": "700",
+      "style": "normal",
+      "usage": "Subtítulos, títulos de cards"
+    },
+    "body": {
+      "family": "DM Sans",
+      "weight": "400",
+      "style": "normal",
+      "usage": "Parágrafos, descrições, textos gerais"
+    },
+    "body-strong": {
+      "family": "DM Sans",
+      "weight": "600",
+      "style": "normal",
+      "usage": "Textos de destaque, labels, botões"
+    },
+    "caption": {
+      "family": "DM Sans",
+      "weight": "400",
+      "style": "normal",
+      "usage": "Textos pequenos, notas, footer"
+    }
+  },
+
+  "spacing": {
+    "base": "8px",
+    "scale": {
+      "1": "8px",
+      "2": "16px",
+      "3": "24px",
+      "4": "32px",
+      "5": "40px",
+      "6": "48px",
+      "8": "64px",
+      "10": "80px",
+      "12": "96px",
+      "16": "128px",
+      "20": "160px"
+    },
+    "section": "96px"
+  },
+
+  "borderRadius": {
+    "sm": "4px",
+    "md": "8px",
+    "lg": "16px",
+    "xl": "24px",
+    "full": "9999px"
+  },
+
+  "shadows": {
+    "sm": "0 1px 3px rgba(28, 28, 28, 0.08)",
+    "md": "0 4px 16px rgba(28, 28, 28, 0.10)",
+    "lg": "0 8px 32px rgba(28, 28, 28, 0.12)",
+    "accent": "0 4px 24px rgba(255, 75, 0, 0.25)"
+  },
+
+  "components": {
+    "button-primary": {
+      "background": "#FF4B00",
+      "color": "#FFFFFF",
+      "borderRadius": "9999px",
+      "padding": "16px 32px",
+      "font": "DM Sans 600",
+      "hover-background": "#E03E00",
+      "shadow": "0 4px 24px rgba(255, 75, 0, 0.30)"
+    },
+    "button-secondary": {
+      "background": "transparent",
+      "color": "#1C1C1C",
+      "border": "2px solid #1C1C1C",
+      "borderRadius": "9999px",
+      "padding": "14px 32px",
+      "font": "DM Sans 600",
+      "hover-background": "#1C1C1C",
+      "hover-color": "#F4F1EC"
+    },
+    "card": {
+      "background": "#FFFFFF",
+      "border": "1px solid #D9D5CE",
+      "borderRadius": "16px",
+      "padding": "32px",
+      "shadow": "0 4px 16px rgba(28, 28, 28, 0.08)"
+    },
+    "card-dark": {
+      "background": "#1C1C1C",
+      "borderRadius": "16px",
+      "padding": "32px"
+    }
+  },
+
+  "googleFonts": {
+    "url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,900&family=DM+Sans:wght@400;500;600&display=swap"
+  }
+}
