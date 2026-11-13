@@ -72,21 +72,9 @@
 
 ---
 
-### 🟠 FASE 05: PROVA SOCIAL — "Empresas que confiam na YASCOM"
-**Status:** `🔄 Em Andamento`
-**Progresso:** 4/6 tarefas (67%)
-**Spec:** `docs/memoria/spec-clientes.md`
-
-#### Tarefas:
-- [x] Logos dos 10 clientes em `public/clientes/` (Shiva, 2026-11-13)
-- [x] Componente `src/components/sections/Clientes.tsx` (esteira infinita, pausa no hover, reduced-motion)
-- [x] Inserir `<Clientes />` entre `<Hero />` e `<Problema />` em `src/app/page.tsx`
-- [x] `npm run lint` + `npm run build` sem erros, commit e push em `dev`
-- [ ] Ravena — QA (desktop, 360px, hover, reduced-motion)
-- [ ] Kerberos — revisão do diff → merge `dev → hml → main` com aprovação de Kleber
-
-**Testável:** Esteira de logos visível entre o Hero e o Problema, sem rolagem horizontal no mobile
-**Notas:** Next.js 16.2.7 (não 15). Ler `node_modules/next/dist/docs/` antes de usar `next/image` (regra do AGENTS.md).
+### ⚪ FASE 05: PROVA SOCIAL — "Empresas que confiam na YASCOM"
+**Status:** `❌ Cancelada`
+**Notas:** Seção implementada em `dev` (e569c43) e revertida a pedido de Kleber em 2026-11-13 (não aprovou o resultado). Nunca chegou a `hml` nem a `main`.
 
 ---
 
@@ -106,3 +94,4 @@
 | — | Atlas: Fases 01–04 executadas (commits d9d3a8d → 3c66364), site em produção |
 | 2026-11-13 | Shiva: spec da seção de clientes + 10 logos. Hades: Fase 05 planejada |
 | 2026-11-13 | Atlas: seção Clientes implementada e enviada para `dev` (e569c43) |
+| 2026-11-13 | Seção Clientes revertida a pedido de Kleber — site volta ao estado anterior |

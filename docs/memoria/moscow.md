@@ -18,7 +18,6 @@
 
 ## 📦 SHOULD HAVE (Logo Depois)
 
-- [ ] Seção Clientes — "Empresas que confiam na YASCOM" (esteira de logos) → `spec-clientes.md` (priorizada por Kleber em 2026-11-13)
 - [ ] Seção Segmentos — mercados atendidos com ícones
 - [ ] Seção FAQ — perguntas frequentes
 
