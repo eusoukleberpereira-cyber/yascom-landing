@@ -3,13 +3,13 @@ const PASSOS = [
     numero: "01",
     titulo: "Diagnóstico",
     descricao:
-      "Conversamos sobre o seu negócio, seus desafios e como seu atendimento funciona hoje. Nada genérico — entendemos sua operação de ponta a ponta.",
+      "Conversamos sobre o seu negócio, seus desafios e como seu atendimento funciona hoje. Nada genérico: entendemos sua operação de ponta a ponta.",
   },
   {
     numero: "02",
     titulo: "Configuração",
     descricao:
-      "Montamos a solução ideal: Agente de IA treinado para o seu negócio, CRM ajustado ao seu processo, integração com seus canais de atendimento.",
+      "Montamos a solução ideal: Agente de IA treinado para o seu negócio, CRM ajustado ao seu processo e integração com seus canais de atendimento.",
   },
   {
     numero: "03",

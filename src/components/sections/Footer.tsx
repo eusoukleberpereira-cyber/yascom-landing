@@ -64,7 +64,7 @@ export function Footer() {
               color: "var(--color-text-muted)",
             }}
           >
-            YASCOM INTELIGÊNCIA DIGITAL LTDA — CNPJ: 65.271.569/0001-37
+            YASCOM INTELIGÊNCIA DIGITAL LTDA | CNPJ: 65.271.569/0001-37
           </p>
           <p
             style={{
