@@ -5,13 +5,13 @@ const DIFERENCIAIS = [
     icon: UserCheck,
     titulo: "Acompanhamento do fundador",
     descricao:
-      "Não é um suporte terceirizado. É o Kleber — fundador da YASCOM — que acompanha você do primeiro contato até o sistema funcionando. E depois também.",
+      "Não é um suporte terceirizado. É o Kleber, fundador da YASCOM, que acompanha você do primeiro contato até o sistema funcionando. E depois também.",
   },
   {
     icon: Settings,
     titulo: "100% sob medida",
     descricao:
-      "Nada de template pronto. Cada solução é construída a partir do zero para o seu negócio, seus processos e sua realidade.",
+      "Nada de template pronto. Cada solução é construída do zero para o seu negócio, seus processos e sua realidade.",
   },
   {
     icon: Zap,
@@ -23,7 +23,7 @@ const DIFERENCIAIS = [
     icon: Headphones,
     titulo: "Suporte contínuo",
     descricao:
-      "Depois de implementado, não te deixamos sozinho. Ajustamos, evoluímos e melhoramos a solução conforme o seu negócio cresce.",
+      "Depois da implementação, não deixamos você sozinho. Ajustamos, evoluímos e melhoramos a solução conforme o seu negócio cresce.",
   },
 ];
 

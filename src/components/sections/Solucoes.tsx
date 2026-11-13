@@ -8,11 +8,11 @@ const SOLUCOES = [
     titulo: "Agente de IA",
     waLink: "agente" as const,
     descricao:
-      "Atendimento automatizado que responde, qualifica leads e vende — 24 horas por dia, 7 dias por semana. Seu negócio nunca fecha.",
+      "Atendimento automatizado que responde, qualifica leads e vende 24 horas por dia, 7 dias por semana. Seu negócio nunca fecha.",
     destaques: [
       "Responde em segundos",
       "Qualifica leads automaticamente",
-      "Escala para humanos quando necessário",
+      "Transfere para um humano quando necessário",
     ],
     destaque: false,
   },
@@ -35,7 +35,7 @@ const SOLUCOES = [
     tag: "Solução completa",
     titulo: "IA + CRM Integrados",
     descricao:
-      "O Agente de IA e o CRM trabalhando juntos em uma única plataforma. O atendimento alimenta o CRM em tempo real — nada se perde.",
+      "O Agente de IA e o CRM trabalhando juntos em uma única plataforma. O atendimento alimenta o CRM em tempo real. Nada se perde.",
     destaques: [
       "Plataforma unificada",
       "Dados em tempo real",

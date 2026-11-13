@@ -78,7 +78,7 @@ export function CTAFinal() {
               margin: "0 auto 48px",
             }}
           >
-            Fale com Kleber agora e descubra qual solução faz sentido para o seu
+            Fale com o Kleber agora e descubra qual solução faz sentido para o seu
             negócio. Sem compromisso, sem enrolação.
           </p>
 

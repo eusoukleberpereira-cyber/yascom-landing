@@ -3,13 +3,13 @@ const DORES = [
     emoji: "⏳",
     titulo: "Clientes esperando horas por uma resposta",
     descricao:
-      "Cada hora de espera é uma chance a mais do concorrente fechar a venda no seu lugar.",
+      "Cada hora de espera é uma chance a mais de o concorrente fechar a venda no seu lugar.",
   },
   {
     emoji: "📉",
     titulo: "Leads esfriando porque ninguém fez o follow-up",
     descricao:
-      "O lead chegou, demonstrou interesse e sumiu. A equipe estava ocupada — e a oportunidade, perdida.",
+      "O lead chegou, demonstrou interesse e sumiu. A equipe estava ocupada, e a oportunidade se perdeu.",
   },
   {
     emoji: "🔄",
@@ -27,7 +27,7 @@ const DORES = [
     emoji: "💸",
     titulo: "Vendas perdidas por falta de organização",
     descricao:
-      "Sem visibilidade do funil, você não sabe onde o cliente parou — e não consegue agir antes de ele desistir.",
+      "Sem visibilidade do funil, você não sabe onde o cliente parou e não consegue agir antes de ele desistir.",
   },
 ];
 
