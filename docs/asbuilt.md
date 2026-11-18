@@ -151,6 +151,8 @@
 | — | `backup-pre-prod-fase04` | Pré-produção | ✅ |
 | 2026-11-18 | `backup-pre-hml-20261118-132049` | Pré-HML (Soluções +3) | ✅ |
 | 2026-11-18 | `backup-pre-prod-20261118-132146` | Pré-produção (Soluções +3) | ✅ |
+| 2026-11-18 | `backup-pre-hml-20261118-145711` | Pré-HML (headline, painel, dobra) | ✅ |
+| 2026-11-18 | `backup-pre-prod-20261118-145728` | Pré-produção (headline, painel, dobra) | ✅ |
 
 ## Histórico de Sessões
 
@@ -168,3 +170,8 @@
 | 2026-11-18 | Kleber não aprovou a v2. Site restaurado ao modelo anterior em `dev`; v2 cancelada |
 | 2026-11-18 | Atlas: 3 novos cards em Soluções (API Oficial WhatsApp Business, Automações de Tarefas Internas, Processamento de Documentos) — ed6b384 |
 | 2026-11-18 | Publicado em produção (`main` c3422b5). Ravena e Kerberos dispensados por Kleber ("CONFIRMAR PRODUÇÃO"); Atlas verificou build, responsividade, secrets e links |
+| 2026-11-18 | Hero: nova headline ("IA e automações para escalar sua empresa de forma estratégica"), etiqueta "IA, CRM e automações sob medida", painel `HeroPainel.tsx` (todos os serviços em sequência) no lugar do chat, OG image atualizada |
+| 2026-11-18 | Hero compactado: primeira dobra inteira a 100% de zoom em 1366×657, 1536×695, 1440×760 e 1920×937; espaço Hero → Problema reduzido |
+| 2026-11-18 | CTA final: "Resposta em até 24 horas" → "Resposta no mesmo dia" (contradizia a dor "clientes esperando horas") |
+| 2026-11-18 | Publicado em produção (`main` 02f5820) a pedido de Kleber ("pode publicar"); Ravena e Kerberos não executados; Atlas verificou build, lint, secrets, dobra e site no ar |
+| 2026-11-18 | Shiva: recomendações pendentes de material de Kleber: caso real de cliente, foto do fundador, oferta "diagnóstico gratuito", FAQ, segmentos, integrações, política de privacidade, medição de cliques, domínio yascom.com.br, WhatsApp flutuante |
