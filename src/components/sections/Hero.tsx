@@ -61,7 +61,7 @@ export function Hero() {
             <h1
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+                fontSize: "clamp(2.25rem, 4.2vw, 3.25rem)",
                 fontWeight: 900,
                 fontStyle: "italic",
                 color: "var(--color-text-primary)",
@@ -69,12 +69,11 @@ export function Hero() {
                 marginBottom: "24px",
               }}
             >
-              Seu atendimento
-              <br />
-              no{" "}
+              Inteligência Artificial e automações para{" "}
               <span style={{ color: "var(--color-accent)" }}>
-                piloto automático.
-              </span>
+                escalar sua empresa
+              </span>{" "}
+              de forma estratégica.
             </h1>
 
             {/* Subheadline */}
@@ -88,8 +87,9 @@ export function Hero() {
                 maxWidth: "560px",
               }}
             >
-              Agentes de IA e CRM personalizados para empresas que não aceitam
-              perder clientes por falha no atendimento.
+              Para empresários e gestores que buscam escalar o negócio de forma
+              inteligente com Agentes de IA, CRM personalizado e automações, e
+              aumentar as vendas sem aumentar a equipe.
             </p>
 
             {/* CTAs */}
