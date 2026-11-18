@@ -18,7 +18,7 @@ export function Header() {
           href={WA.diagnostico}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary px-4 py-2.5 text-sm sm:px-6 sm:py-3"
+          className="btn-primary px-3 py-2.5 text-[0.8125rem] whitespace-nowrap min-[360px]:px-4 min-[360px]:text-sm sm:px-6 sm:py-3"
         >
           <MessageCircle size={16} aria-hidden="true" />
           Diagnóstico gratuito

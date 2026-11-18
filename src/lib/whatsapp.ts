@@ -17,13 +17,6 @@ export const WA = {
   documentos: interesse("Processamento de Documentos"),
   sistemas: interesse("Sistemas sob medida"),
   trafego: interesse("Tráfego Pago"),
-
-  /* LEGADO v1: usados pelas seções antigas até serem substituídas (Fases 07–09). */
-  header: encode(DIAGNOSTICO),
-  hero: encode(DIAGNOSTICO),
-  agente: interesse("Agentes de I.A."),
-  completo: encode(DIAGNOSTICO),
-  cta: encode(DIAGNOSTICO),
 } as const;
 
 export type WaKey = keyof typeof WA;

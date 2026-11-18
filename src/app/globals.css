@@ -85,25 +85,6 @@
   /* === Layout === */
   --container-max: 1200px;
   --container-padding: 16px;
-
-  /* === LEGADO v1 (apelidos para as seções antigas) ===
-     Remover na Fase 09, quando nenhuma seção usar mais style={{}}. */
-  --color-bg-primary: var(--color-base);
-  --color-bg-secondary: var(--color-raised);
-  --color-bg-dark: var(--color-raised);
-  --color-bg-white: var(--color-surface);
-  --color-text-primary: var(--color-fg);
-  --color-text-secondary: var(--color-fg-soft);
-  --color-text-inverted: var(--color-fg);
-  --color-text-muted: var(--color-fg-muted);
-  --color-text-on-accent: var(--color-on-accent);
-  --color-accent-light: var(--color-accent-subtle);
-  --color-border: var(--color-line);
-  --color-border-strong: var(--color-line-strong);
-  --shadow-sm: none;
-  --shadow-md: none;
-  --shadow-lg: none;
-  --shadow-accent: 0 0 0 1px var(--color-accent);
 }
 
 @media (min-width: 768px) {
@@ -260,13 +241,6 @@
     background-size: 48px 48px;
   }
 
-  .accent {
-    color: var(--color-accent);
-  }
-
-  .text-inverted {
-    color: var(--color-fg);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

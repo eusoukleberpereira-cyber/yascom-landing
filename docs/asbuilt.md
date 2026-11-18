@@ -117,9 +117,15 @@
 **Correções:** mensagem do WhatsApp de Agentes terminava em "I.A.." (ponto duplo), corrigido em `whatsapp.ts`; 4 colunas do método estouravam a largura em 768px, corrigido com 2 colunas no tablet.
 
 ### 🔵 FASE 09: FECHAMENTO
-**Status:** `⏳ Aguardando`
-**Progresso:** 0/6 tarefas (0%)
-- Oferta Diagnóstico Gratuito, FAQ, Fechamento, Footer, WhatsApp flutuante (mobile)
+**Status:** `✅ Completa` (aguardando revisão de Kleber, incluindo as respostas do FAQ)
+**Progresso:** 6/6 tarefas (100%)
+- [x] 09.1 `Oferta.tsx` (novo, `#diagnostico`): "O que você recebe" + "Zero risco" + CTA
+- [x] 09.2 `FAQ.tsx` (novo, `#faq`): 8 perguntas com `<details>` nativo; testado com mouse e teclado (Tab + Enter)
+- [x] 09.3 `Fechamento.tsx` (substitui `CTAFinal.tsx`, mantém `#contato`): sem o brilho laranja proibido
+- [x] 09.4 `Footer.tsx`: tema escuro, links das seções, razão social, CNPJ
+- [x] 09.5 `WhatsAppFlutuante.tsx`: só < 768px, respeita safe-area; footer com espaço extra no celular
+- [x] 09.6 `CTAFinal.tsx` removido · apelidos legados removidos de `globals.css` · chaves legadas removidas de `whatsapp.ts` · **zero `style={{}}` e zero `<style>` nos componentes** · lint ✅ · tsc ✅ · build ✅ · sem rolagem lateral em 320/375/414/768/1024/1280 ✅
+**Notas:** em 320px (celulares muito antigos) os botões longos quebram em 2 linhas, sem estourar a tela; a partir de 375px ficam em 1 linha.
 
 ### 🔵 FASE 10: PRODUÇÃO v2
 **Status:** `⏳ Aguardando`
