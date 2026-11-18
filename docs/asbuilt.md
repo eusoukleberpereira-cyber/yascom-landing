@@ -149,6 +149,8 @@
 |------|-----|------|--------|
 | — | `backup-pre-hml-fase04` | Pré-HML | ✅ |
 | — | `backup-pre-prod-fase04` | Pré-produção | ✅ |
+| 2026-11-18 | `backup-pre-hml-20261118-132049` | Pré-HML (Soluções +3) | ✅ |
+| 2026-11-18 | `backup-pre-prod-20261118-132146` | Pré-produção (Soluções +3) | ✅ |
 
 ## Histórico de Sessões
 
@@ -164,3 +166,5 @@
 | 2026-11-18 | Hades: ADR-001, plano das Fases 06–10 e copy deck completo em `plano-tarefas-v2.md` |
 | 2026-11-18 | Atlas: Fases 06–09 + 10.1/10.2 executadas em `dev` (de53a58 → e75c773) |
 | 2026-11-18 | Kleber não aprovou a v2. Site restaurado ao modelo anterior em `dev`; v2 cancelada |
+| 2026-11-18 | Atlas: 3 novos cards em Soluções (API Oficial WhatsApp Business, Automações de Tarefas Internas, Processamento de Documentos) — ed6b384 |
+| 2026-11-18 | Publicado em produção (`main` c3422b5). Ravena e Kerberos dispensados por Kleber ("CONFIRMAR PRODUÇÃO"); Atlas verificou build, responsividade, secrets e links |

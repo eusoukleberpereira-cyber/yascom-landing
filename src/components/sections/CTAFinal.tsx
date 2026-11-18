@@ -109,7 +109,7 @@ export function CTAFinal() {
               marginTop: "24px",
             }}
           >
-            Resposta em até 24 horas • Sem spam • Sem pressão
+            Resposta no mesmo dia • Sem spam • Sem pressão
           </p>
         </div>
       </div>

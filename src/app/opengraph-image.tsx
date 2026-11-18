@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "YASCOM | Agentes de IA e CRM para Empresas";
+export const alt = "YASCOM | IA e automações para escalar sua empresa";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -76,7 +76,7 @@ export default function OGImage() {
               letterSpacing: "0.05em",
             }}
           >
-            IA + CRM sob medida para empresas
+            IA, CRM e automações sob medida
           </span>
         </div>
 
@@ -93,11 +93,9 @@ export default function OGImage() {
               flexDirection: "column",
             }}
           >
-            <span>Seu atendimento</span>
-            <span>
-              no <span style={{ color: "#FF4B00" }}>piloto</span>
-            </span>
-            <span style={{ color: "#FF4B00" }}>automático.</span>
+            <span>IA e automações para</span>
+            <span style={{ color: "#FF4B00" }}>escalar sua empresa</span>
+            <span>de forma estratégica.</span>
           </div>
           <div
             style={{
@@ -107,8 +105,8 @@ export default function OGImage() {
               lineHeight: 1.5,
             }}
           >
-            Agentes de IA e CRM personalizados para empresas que não aceitam
-            perder clientes.
+            Agentes de IA, CRM personalizado e automações para vender mais
+            sem aumentar a equipe.
           </div>
         </div>
 
