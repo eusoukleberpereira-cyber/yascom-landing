@@ -1,12 +1,13 @@
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { WA } from "@/lib/whatsapp";
+import { HeroPainel } from "./HeroPainel";
 
 export function Hero() {
   return (
     <section
       style={{
-        paddingTop: "calc(72px + 80px)",
-        paddingBottom: "80px",
+        paddingTop: "calc(72px + 16px)",
+        paddingBottom: "40px",
         backgroundColor: "var(--color-bg-primary)",
         overflow: "hidden",
       }}
@@ -22,7 +23,7 @@ export function Hero() {
           className="hero-grid"
         >
           {/* Conteúdo */}
-          <div style={{ maxWidth: "680px" }}>
+          <div style={{ maxWidth: "700px" }}>
             {/* Badge */}
             <div
               style={{
@@ -33,7 +34,7 @@ export function Hero() {
                 border: "1px solid var(--color-accent)",
                 borderRadius: "var(--radius-full)",
                 padding: "6px 16px",
-                marginBottom: "32px",
+                marginBottom: "20px",
               }}
             >
               <span
@@ -53,7 +54,7 @@ export function Hero() {
                   color: "var(--color-accent)",
                 }}
               >
-                IA + CRM sob medida para empresas
+                IA, CRM e automações sob medida
               </span>
             </div>
 
@@ -61,35 +62,35 @@ export function Hero() {
             <h1
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+                fontSize: "clamp(2.25rem, 3.1vw, 3rem)",
                 fontWeight: 900,
                 fontStyle: "italic",
                 color: "var(--color-text-primary)",
                 lineHeight: 1.05,
-                marginBottom: "24px",
+                marginBottom: "16px",
               }}
             >
-              Seu atendimento
-              <br />
-              no{" "}
+              Inteligência Artificial e automações para{" "}
               <span style={{ color: "var(--color-accent)" }}>
-                piloto automático.
-              </span>
+                escalar sua empresa
+              </span>{" "}
+              de forma estratégica.
             </h1>
 
             {/* Subheadline */}
             <p
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "var(--text-xl)",
+                fontSize: "var(--text-lg)",
                 color: "var(--color-text-secondary)",
                 lineHeight: 1.6,
-                marginBottom: "40px",
-                maxWidth: "560px",
+                marginBottom: "28px",
+                maxWidth: "600px",
               }}
             >
-              Agentes de IA e CRM personalizados para empresas que não aceitam
-              perder clientes por falha no atendimento.
+              Para empresários e gestores que buscam escalar o negócio de forma
+              inteligente com Agentes de IA, CRM personalizado e automações, e
+              aumentar as vendas sem aumentar a equipe.
             </p>
 
             {/* CTAs */}
@@ -112,8 +113,8 @@ export function Hero() {
             {/* Stats */}
             <div
               style={{
-                marginTop: "48px",
-                paddingTop: "32px",
+                marginTop: "28px",
+                paddingTop: "20px",
                 borderTop: "1px solid var(--color-border)",
                 display: "flex",
                 gap: "32px",
@@ -129,7 +130,7 @@ export function Hero() {
                   <p
                     style={{
                       fontFamily: "var(--font-display)",
-                      fontSize: "var(--text-3xl)",
+                      fontSize: "var(--text-2xl)",
                       fontWeight: 900,
                       fontStyle: "italic",
                       color: "var(--color-accent)",
@@ -158,7 +159,7 @@ export function Hero() {
             className="hero-visual"
             style={{
               position: "relative",
-              height: "400px",
+              minHeight: "360px",
               alignItems: "center",
               justifyContent: "center",
               display: "none",
@@ -166,105 +167,22 @@ export function Hero() {
           >
             <div
               style={{
-                width: "320px",
-                height: "320px",
+                width: "420px",
+                height: "420px",
                 borderRadius: "50%",
                 background:
                   "radial-gradient(circle, rgba(255,75,0,0.12) 0%, rgba(255,75,0,0.03) 60%, transparent 100%)",
                 position: "absolute",
               }}
             />
-            <div
-              style={{
-                border: "1px solid var(--color-border)",
-                borderRadius: "var(--radius-xl)",
-                padding: "28px",
-                backgroundColor: "var(--color-bg-white)",
-                boxShadow: "var(--shadow-lg)",
-                maxWidth: "280px",
-                position: "relative",
-                width: "100%",
-              }}
-            >
-              <div style={{ marginBottom: "16px" }}>
-                <div
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    backgroundColor: "var(--color-accent-light)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: "10px",
-                  }}
-                >
-                  <span style={{ fontSize: "20px" }}>🤖</span>
-                </div>
-                <p
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "var(--text-sm)",
-                    fontWeight: 600,
-                    color: "var(--color-text-primary)",
-                    margin: 0,
-                  }}
-                >
-                  Agente YASCOM
-                </p>
-                <p
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "var(--text-xs)",
-                    color: "var(--color-text-muted)",
-                    margin: "2px 0 0",
-                  }}
-                >
-                  Online agora • Responde em segundos
-                </p>
-              </div>
-              {[
-                { msg: "Olá! Como posso ajudar?", own: false },
-                { msg: "Quero saber sobre os planos", own: true },
-                { msg: "Claro! Vou te passar todas as informações 👇", own: false },
-              ].map((m, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: "flex",
-                    justifyContent: m.own ? "flex-end" : "flex-start",
-                    marginBottom: "8px",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "var(--text-xs)",
-                      backgroundColor: m.own
-                        ? "var(--color-accent)"
-                        : "var(--color-bg-secondary)",
-                      color: m.own ? "#fff" : "var(--color-text-primary)",
-                      borderRadius: m.own
-                        ? "12px 12px 2px 12px"
-                        : "12px 12px 12px 2px",
-                      padding: "8px 12px",
-                      maxWidth: "80%",
-                      lineHeight: 1.4,
-                      display: "inline-block",
-                    }}
-                  >
-                    {m.msg}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <HeroPainel />
           </div>
         </div>
       </div>
 
       <style>{`
         @media (min-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr 1fr !important; }
+          .hero-grid { grid-template-columns: 1.4fr 1fr !important; }
           .hero-visual { display: flex !important; }
         }
       `}</style>
