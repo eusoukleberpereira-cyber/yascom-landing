@@ -2,7 +2,7 @@
 
 **Descrição:** Landing page de alta conversão para YASCOM INTELIGÊNCIA DIGITAL LTDA, apresentando soluções de Agentes de IA e CRM personalizados. Objetivo único: gerar contato via WhatsApp.
 **Stack:** Next.js 16.2.7 (Turbopack) + React 19 + Tailwind CSS 4 + Vercel + GitHub
-**Última atualização:** 2026-11-13
+**Última atualização:** 2026-11-18 (planejamento da v2)
 
 > Status das Fases 01–04 reconstruído em 2026-11-13 a partir do `git log`, das tags de backup e do código atual (o arquivo não tinha sido atualizado durante a execução).
 
@@ -78,6 +78,71 @@
 
 ---
 
+# ⚪ LANDING v2 — "Sala de Controle" · `❌ Cancelada`
+
+> **2026-11-18:** Kleber revisou a v2 completa em localhost e não aprovou. Código, spec, design system e MoSCoW restaurados ao estado de antes da v2 (`9e8f644`) por um commit de restauração em `dev`. A v2 nunca chegou a `hml` nem a `main`; o site em produção não foi alterado. O histórico abaixo fica como registro; o código da v2 continua recuperável no git (commits `de53a58` → `e75c773`).
+>
+> Spec v2 (histórico): `docs/memoria/projeto.md` v2.0 · Plano detalhado: `docs/memoria/plano-tarefas-v2.md` · Decisões: `docs/decisions/ADR-001-landing-v2-estilo-e-conteudo.md`
+
+### 🔵 FASE 06: FUNDAÇÃO v2
+**Status:** `✅ Completa` (aguardando revisão visual de Kleber)
+**Progresso:** 9/9 tarefas (100%)
+- [x] 06.1 Tokens v2 no Tailwind (`@theme static`) + apelidos legados para as seções antigas
+- [x] 06.2 JetBrains Mono via `next/font`; variáveis renomeadas (`--font-fraunces`, `--font-dm-sans`, `--font-jetbrains`) para não colidir com os tokens
+- [x] 06.3 Botões/cards/label-mono/bg-grid v2, foco visível, reduced-motion; estilos de elemento movidos para `@layer base`
+- [x] 06.4 `whatsapp.ts`: mensagens do diagnóstico + 7 por solução (chaves legadas mantidas até Fase 09)
+- [x] 06.5 `src/content/landing.ts` com o copy deck completo
+- [x] 06.6 `src/components/ui/`: `Section`, `SectionHeader`, `CtaWhatsApp`
+- [x] 06.7 SEO v2 + `viewport.themeColor`
+- [x] 06.8 Seções antigas legíveis no escuro (3 cores fixas trocadas)
+- [x] 06.9 lint ✅ · tsc ✅ · build ✅ · verificação visual em localhost ✅
+**Notas:** o brilho laranja do `CTAFinal.tsx` (proibido no design v2) sai na Fase 09, quando a seção é substituída.
+
+### 🔵 FASE 07: TOPO DA ESCADA
+**Status:** `✅ Completa` (aguardando revisão visual de Kleber)
+**Progresso:** 6/6 tarefas (100%)
+- [x] 07.1 `Header.tsx`: Server Component (sem JS no cliente), logo + "Diagnóstico gratuito", sem menu hambúrguer
+- [x] 07.2 `Hero.tsx`: grade técnica, H1 novo, CTA diagnóstico + "Ver o que construímos", microcopy, 3 indicadores, conversa do Agente (≥768px)
+- [x] 07.3 `Virada.tsx` (novo): "O problema não é" riscado × "O problema sempre foi" em destaque
+- [x] 07.4 `Dores.tsx` (novo): 6 dores + 3 alívios
+- [x] 07.5 `Problema.tsx` removido; `page.tsx` atualizado
+- [x] 07.6 lint ✅ · tsc ✅ · build ✅ · 375px sem rolagem horizontal ✅ · 768px ✅ · 1536px ✅
+
+### 🔵 FASE 08: CORAÇÃO
+**Status:** `✅ Completa` (aguardando revisão visual de Kleber)
+**Progresso:** 5/5 tarefas (100%)
+- [x] 08.1 `Pilares.tsx` (novo, `#resultados`): 6 cards numerados (pilar 1 sem "5x") + CTA
+- [x] 08.2 `Catalogo.tsx` (novo, `#solucoes`): 7 soluções com etiquetas e CTA por solução; bloco do ecossistema ocupa o espaço ao lado do 7º card
+- [x] 08.3 `ComoFunciona.tsx`: 4 etapas (1 col celular · 2 col tablet · 4 col desktop com linha)
+- [x] 08.4 `PorQueYascom.tsx`: mesmo conteúdo, tema escuro, texto em `landing.ts`
+- [x] 08.5 `Solucoes.tsx` removido · lint ✅ · tsc ✅ · build ✅ · sem rolagem lateral em 375/768/1024/1280 ✅
+**Correções:** mensagem do WhatsApp de Agentes terminava em "I.A.." (ponto duplo), corrigido em `whatsapp.ts`; 4 colunas do método estouravam a largura em 768px, corrigido com 2 colunas no tablet.
+
+### 🔵 FASE 09: FECHAMENTO
+**Status:** `✅ Completa` (aguardando revisão de Kleber, incluindo as respostas do FAQ)
+**Progresso:** 6/6 tarefas (100%)
+- [x] 09.1 `Oferta.tsx` (novo, `#diagnostico`): "O que você recebe" + "Zero risco" + CTA
+- [x] 09.2 `FAQ.tsx` (novo, `#faq`): 8 perguntas com `<details>` nativo; testado com mouse e teclado (Tab + Enter)
+- [x] 09.3 `Fechamento.tsx` (substitui `CTAFinal.tsx`, mantém `#contato`): sem o brilho laranja proibido
+- [x] 09.4 `Footer.tsx`: tema escuro, links das seções, razão social, CNPJ
+- [x] 09.5 `WhatsAppFlutuante.tsx`: só < 768px, respeita safe-area; footer com espaço extra no celular
+- [x] 09.6 `CTAFinal.tsx` removido · apelidos legados removidos de `globals.css` · chaves legadas removidas de `whatsapp.ts` · **zero `style={{}}` e zero `<style>` nos componentes** · lint ✅ · tsc ✅ · build ✅ · sem rolagem lateral em 320/375/414/768/1024/1280 ✅
+**Notas:** em 320px (celulares muito antigos) os botões longos quebram em 2 linhas, sem estourar a tela; a partir de 375px ficam em 1 linha.
+
+### 🔵 FASE 10: PRODUÇÃO v2
+**Status:** `🔄 Em Andamento` (portão: Ravena + Kerberos + aprovação de Kleber)
+**Progresso:** 2/6 tarefas (33%)
+- [x] 10.1 `opengraph-image.tsx` no visual escuro (headline v2 + "Diagnóstico gratuito"); `icon.tsx` com Y grafite sobre laranja
+- [x] 10.2 Medição no build de produção: celular (CPU 4x + 4G lento) FCP/LCP 2,0 s · CLS 0 — desktop LCP 0,38 s · CLS 0 — 14 requisições, ~310 KB. Lighthouse local falhou 2x com `NO_NAVSTART` (bug do Chrome headless no Windows); Acessibilidade 100 e SEO 100 foram medidos. Rodar PageSpeed Insights na URL de produção após o deploy.
+- [ ] 10.3 Ravena — QA completo
+- [ ] 10.4 Kerberos — auditoria de segurança
+- [ ] 10.5 Tag `backup-pre-hml-v2` → merge `dev → hml` (aprovação de Kleber)
+- [ ] 10.6 Tag `backup-pre-prod-v2` → merge `hml → main` (aprovação de Kleber) → deploy Vercel
+**Pendente de decisão:** a imagem de compartilhamento usa a fonte padrão do gerador (sem Fraunces). Para usar Fraunces é preciso baixar os arquivos `.ttf` (licença OFL) para o projeto.
+**Pendente de Kleber:** validar as respostas do FAQ (`src/content/landing.ts`).
+
+---
+
 ## Backups e Segurança
 
 | Data | Tag | Tipo | Status |
@@ -95,3 +160,7 @@
 | 2026-11-13 | Shiva: spec da seção de clientes + 10 logos. Hades: Fase 05 planejada |
 | 2026-11-13 | Atlas: seção Clientes implementada e enviada para `dev` (e569c43) |
 | 2026-11-13 | Seção Clientes revertida a pedido de Kleber — site volta ao estado anterior |
+| 2026-11-18 | Shiva: spec v2.0 (tema escuro "Sala de Controle", 6 pilares, catálogo com 7 soluções, diagnóstico gratuito), MoSCoW v2 aprovado |
+| 2026-11-18 | Hades: ADR-001, plano das Fases 06–10 e copy deck completo em `plano-tarefas-v2.md` |
+| 2026-11-18 | Atlas: Fases 06–09 + 10.1/10.2 executadas em `dev` (de53a58 → e75c773) |
+| 2026-11-18 | Kleber não aprovou a v2. Site restaurado ao modelo anterior em `dev`; v2 cancelada |

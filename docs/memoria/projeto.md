@@ -52,6 +52,15 @@ Sistema de gestão de relacionamento com clientes desenvolvido sob medida para a
 ### 3. Solução Completa (CRM + IA Integrada)
 A combinação das duas soluções em uma plataforma unificada. O Agente de IA alimenta o CRM em tempo real, criando um ecossistema completo de atendimento e gestão.
 
+### 4. API Oficial WhatsApp Business *(adicionada em 2026-11-18)*
+Conexão do WhatsApp da empresa à API oficial da Meta: estabilidade, vários atendentes no mesmo número e sem o risco de bloqueio das ferramentas não oficiais. Base para Agentes de IA e automações.
+
+### 5. Automações de Tarefas Internas *(adicionada em 2026-11-18)*
+Tarefas repetitivas da equipe (avisos, relatórios, planilhas, cadastros) passam a acontecer sozinhas, conectando as ferramentas que o cliente já usa.
+
+### 6. Processamento de Documentos *(adicionada em 2026-11-18)*
+IA que lê contratos, notas fiscais, comprovantes e formulários, extrai as informações importantes e organiza tudo no sistema do cliente.
+
 ---
 
 ## Estrutura da Landing Page
@@ -62,7 +71,7 @@ A combinação das duas soluções em uma plataforma unificada. O Agente de IA a
 | 01 | Header fixo | Logo YASCOM + botão WhatsApp sempre visível no topo |
 | 02 | Hero | Headline de impacto + subheadline + CTA WhatsApp principal |
 | 03 | Problema | Dores do cliente antes da YASCOM — cria identificação |
-| 04 | Soluções | 3 cards: Agente de IA / CRM Personalizado / Solução Completa |
+| 04 | Soluções | 6 cards: Agente de IA / CRM Personalizado / Solução Completa / API Oficial WhatsApp Business / Automações de Tarefas Internas / Processamento de Documentos |
 | 05 | Como Funciona | Processo em 3 passos: Diagnóstico → Configuração → Resultado |
 | 07 | Por que YASCOM | Diferenciais: personalização, acompanhamento, resultado |
 | 09 | CTA Final | Seção de encerramento poderosa com botão WhatsApp |
