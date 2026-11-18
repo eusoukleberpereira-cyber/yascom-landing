@@ -8,5 +8,8 @@ export const WA = {
   agente:   encode("Olá Kleber! Tenho interesse no Agente de IA da YASCOM. Como funciona?"),
   crm:      encode("Olá Kleber! Quero saber mais sobre o CRM Personalizado da YASCOM."),
   completo: encode("Olá Kleber! Tenho interesse na Solução Completa da YASCOM. Podemos conversar?"),
+  api:        encode("Olá Kleber! Quero saber mais sobre a API Oficial do WhatsApp Business com a YASCOM."),
+  automacoes: encode("Olá Kleber! Quero automatizar tarefas internas da minha empresa. Como funciona?"),
+  documentos: encode("Olá Kleber! Tenho interesse no Processamento de Documentos com IA da YASCOM."),
   cta:      encode("Olá Kleber! Quero transformar o atendimento da minha empresa. Por onde começamos?"),
 };
