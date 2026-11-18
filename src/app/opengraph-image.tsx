@@ -1,6 +1,16 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "YASCOM | Agentes de IA e CRM para Empresas";
+// Imagem de compartilhamento (WhatsApp, LinkedIn, etc.) no visual v2 "Sala de Controle".
+// ImageResponse exige estilos inline; as cores repetem os tokens de globals.css.
+const BASE = "#141210";
+const FG = "#F4F1EC";
+const FG_SOFT = "#B8B1A7";
+const FG_MUTED = "#8F887E";
+const ACCENT = "#FF4B00";
+const LINE = "#34302A";
+const GRID = "rgba(244, 241, 236, 0.05)";
+
+export const alt = "YASCOM | I.A., Automação, Sistemas e Tráfego Pago para Empresas";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -11,151 +21,76 @@ export default function OGImage() {
         style={{
           width: "1200px",
           height: "630px",
-          backgroundColor: "#F4F1EC",
+          backgroundColor: BASE,
+          backgroundImage: `linear-gradient(${GRID} 1px, transparent 1px), linear-gradient(90deg, ${GRID} 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-start",
           justifyContent: "space-between",
-          padding: "80px",
+          padding: "72px 80px",
           fontFamily: "serif",
-          position: "relative",
         }}
       >
-        {/* Elemento decorativo laranja — topo direito */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-100px",
-            right: "-100px",
-            width: "500px",
-            height: "500px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(255,75,0,0.15) 0%, transparent 70%)",
-          }}
-        />
-        {/* Elemento decorativo laranja — base esquerda */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-80px",
-            left: "40px",
-            width: "300px",
-            height: "300px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(255,75,0,0.08) 0%, transparent 70%)",
-          }}
-        />
-
-        {/* Topo — badge */}
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            backgroundColor: "rgba(255,75,0,0.1)",
-            border: "1px solid #FF4B00",
-            borderRadius: "100px",
-            padding: "8px 20px",
+            fontFamily: "monospace",
+            fontSize: "20px",
+            letterSpacing: "0.14em",
+            color: ACCENT,
+            textTransform: "uppercase",
           }}
         >
-          <div
-            style={{
-              width: "8px",
-              height: "8px",
-              borderRadius: "50%",
-              backgroundColor: "#FF4B00",
-            }}
-          />
-          <span
-            style={{
-              fontSize: "18px",
-              fontWeight: 600,
-              color: "#FF4B00",
-              letterSpacing: "0.05em",
-            }}
-          >
-            IA + CRM sob medida para empresas
-          </span>
+          I.A. · Automação · Sistemas · Tráfego Pago
         </div>
 
-        {/* Centro — headline */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           <div
             style={{
-              fontSize: "80px",
-              fontWeight: 900,
-              color: "#1C1C1C",
-              lineHeight: 1.0,
-              fontStyle: "italic",
               display: "flex",
               flexDirection: "column",
+              fontSize: "84px",
+              fontWeight: 900,
+              fontStyle: "italic",
+              lineHeight: 1.02,
+              color: FG,
             }}
           >
-            <span>Seu atendimento</span>
-            <span>
-              no <span style={{ color: "#FF4B00" }}>piloto</span>
-            </span>
-            <span style={{ color: "#FF4B00" }}>automático.</span>
+            <span>Cliente que espera,</span>
+            <span style={{ color: ACCENT }}>compra do concorrente.</span>
           </div>
-          <div
-            style={{
-              fontSize: "26px",
-              color: "#5C5855",
-              maxWidth: "700px",
-              lineHeight: 1.5,
-            }}
-          >
-            Agentes de IA e CRM personalizados para empresas que não aceitam
-            perder clientes.
+          <div style={{ display: "flex", fontSize: "28px", color: FG_SOFT, maxWidth: "860px", lineHeight: 1.45 }}>
+            Agentes de I.A., automações, sistemas e tráfego pago sob medida para a sua empresa.
           </div>
         </div>
 
-        {/* Rodapé — logo + CTA */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            width: "100%",
+            borderTop: `1px solid ${LINE}`,
+            paddingTop: "28px",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-            <span
-              style={{
-                fontSize: "36px",
-                fontWeight: 900,
-                color: "#1C1C1C",
-                fontStyle: "italic",
-                lineHeight: 1,
-              }}
-            >
-              YASCOM
-            </span>
-            <span
-              style={{
-                fontSize: "14px",
-                color: "#8C8784",
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-              }}
-            >
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+            <span style={{ fontSize: "38px", fontWeight: 900, color: FG, lineHeight: 1 }}>YASCOM</span>
+            <span style={{ fontSize: "15px", color: FG_MUTED, letterSpacing: "0.16em", textTransform: "uppercase" }}>
               Inteligência Digital
             </span>
           </div>
-
           <div
             style={{
-              backgroundColor: "#FF4B00",
-              color: "#FFFFFF",
+              display: "flex",
+              backgroundColor: ACCENT,
+              color: BASE,
               borderRadius: "100px",
-              padding: "16px 32px",
-              fontSize: "22px",
-              fontWeight: 600,
+              padding: "18px 34px",
+              fontSize: "24px",
+              fontWeight: 700,
             }}
           >
-            Fale no WhatsApp →
+            Diagnóstico gratuito →
           </div>
         </div>
       </div>

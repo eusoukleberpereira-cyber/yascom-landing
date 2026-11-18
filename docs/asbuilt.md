@@ -128,9 +128,16 @@
 **Notas:** em 320px (celulares muito antigos) os botões longos quebram em 2 linhas, sem estourar a tela; a partir de 375px ficam em 1 linha.
 
 ### 🔵 FASE 10: PRODUÇÃO v2
-**Status:** `⏳ Aguardando`
-**Progresso:** 0/6 tarefas (0%)
-- OG image escura, Lighthouse, Ravena, Kerberos, merge `hml` → `main`
+**Status:** `🔄 Em Andamento` (portão: Ravena + Kerberos + aprovação de Kleber)
+**Progresso:** 2/6 tarefas (33%)
+- [x] 10.1 `opengraph-image.tsx` no visual escuro (headline v2 + "Diagnóstico gratuito"); `icon.tsx` com Y grafite sobre laranja
+- [x] 10.2 Medição no build de produção: celular (CPU 4x + 4G lento) FCP/LCP 2,0 s · CLS 0 — desktop LCP 0,38 s · CLS 0 — 14 requisições, ~310 KB. Lighthouse local falhou 2x com `NO_NAVSTART` (bug do Chrome headless no Windows); Acessibilidade 100 e SEO 100 foram medidos. Rodar PageSpeed Insights na URL de produção após o deploy.
+- [ ] 10.3 Ravena — QA completo
+- [ ] 10.4 Kerberos — auditoria de segurança
+- [ ] 10.5 Tag `backup-pre-hml-v2` → merge `dev → hml` (aprovação de Kleber)
+- [ ] 10.6 Tag `backup-pre-prod-v2` → merge `hml → main` (aprovação de Kleber) → deploy Vercel
+**Pendente de decisão:** a imagem de compartilhamento usa a fonte padrão do gerador (sem Fraunces). Para usar Fraunces é preciso baixar os arquivos `.ttf` (licença OFL) para o projeto.
+**Pendente de Kleber:** validar as respostas do FAQ (`src/content/landing.ts`).
 
 ---
 
