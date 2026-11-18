@@ -1,4 +1,5 @@
 import { UserCheck, Settings, Zap, Headphones } from "lucide-react";
+import { Fundador } from "./Fundador";
 
 const DIFERENCIAIS = [
   {
@@ -146,6 +147,8 @@ export function PorQueYascom() {
             })}
           </div>
         </div>
+
+        <Fundador />
       </div>
 
       <style>{`
