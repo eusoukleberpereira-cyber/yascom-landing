@@ -213,7 +213,10 @@ export const comoFunciona = {
 
 /** Mantido do site v1 (PorQueYascom.tsx), conforme plano 08.4. */
 export const porQueYascom = {
-  label: "Por que YASCOM",
+  label: "Por que a YASCOM",
+  titulo: "Não somos mais uma ferramenta de IA.",
+  subtitulo:
+    "Somos uma parceria. A diferença entre uma ferramenta que você precisa aprender a usar e uma solução que funciona para o seu negócio desde o primeiro dia.",
   diferenciais: [
     {
       icone: "userCheck",

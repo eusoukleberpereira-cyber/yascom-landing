@@ -1,116 +1,33 @@
-const PASSOS = [
-  {
-    numero: "01",
-    titulo: "Diagnóstico",
-    descricao:
-      "Conversamos sobre o seu negócio, seus desafios e como seu atendimento funciona hoje. Nada genérico: entendemos sua operação de ponta a ponta.",
-  },
-  {
-    numero: "02",
-    titulo: "Configuração",
-    descricao:
-      "Montamos a solução ideal: Agente de IA treinado para o seu negócio, CRM ajustado ao seu processo e integração com seus canais de atendimento.",
-  },
-  {
-    numero: "03",
-    titulo: "Resultado",
-    descricao:
-      "Você atende mais, vende mais e perde menos clientes. E conta com suporte direto para ajustar o que for necessário ao longo do caminho.",
-  },
-];
+import { comoFunciona } from "@/content/landing";
+import { Section } from "@/components/ui/Section";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
+/** O método em 4 etapas numeradas, ligadas por uma linha no desktop. */
 export function ComoFunciona() {
   return (
-    <section className="dark" id="como-funciona">
-      <div className="container">
-        <div style={{ textAlign: "center", marginBottom: "64px" }}>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "var(--text-sm)",
-              fontWeight: 600,
-              color: "var(--color-accent)",
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              marginBottom: "16px",
-            }}
-          >
-            Como funciona
-          </p>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              fontWeight: 900,
-              fontStyle: "italic",
-              color: "var(--color-text-inverted)",
-              lineHeight: 1.1,
-              maxWidth: "560px",
-              margin: "0 auto",
-            }}
-          >
-            Simples assim. Em 3 passos.
-          </h2>
-        </div>
+    <Section id="como-funciona" variant="raised" aria-labelledby="como-funciona-titulo">
+      <SectionHeader
+        label={comoFunciona.label}
+        title={comoFunciona.titulo}
+        titleId="como-funciona-titulo"
+      />
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "40px",
-          }}
-        >
-          {PASSOS.map((passo, i) => (
-            <div
-              key={i}
-              style={{ display: "flex", flexDirection: "column", gap: "20px" }}
-            >
-              <span
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "var(--text-6xl)",
-                  fontWeight: 900,
-                  fontStyle: "italic",
-                  color: "var(--color-accent)",
-                  lineHeight: 1,
-                  opacity: 0.7,
-                }}
-              >
-                {passo.numero}
-              </span>
+      <ol className="relative mt-14 grid gap-10 md:grid-cols-2 md:gap-x-8 md:gap-y-12 lg:grid-cols-4 lg:gap-6">
+        {/* Linha que conecta as etapas (só com 4 colunas) */}
+        <span aria-hidden="true" className="absolute top-6 right-0 left-0 hidden h-px bg-line lg:block" />
 
-              <div
-                style={{
-                  borderLeft: "2px solid var(--color-accent)",
-                  paddingLeft: "20px",
-                }}
-              >
-                <h3
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "var(--text-2xl)",
-                    fontWeight: 700,
-                    color: "var(--color-text-inverted)",
-                    marginBottom: "12px",
-                  }}
-                >
-                  {passo.titulo}
-                </h3>
-                <p
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "var(--text-base)",
-                    color: "var(--color-text-muted)",
-                    lineHeight: 1.7,
-                  }}
-                >
-                  {passo.descricao}
-                </p>
-              </div>
+        {comoFunciona.etapas.map((etapa, i) => (
+          <li key={etapa.titulo} className="relative flex min-w-0 gap-5 md:flex-col md:gap-6">
+            <span className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full border border-accent bg-raised font-mono text-sm font-medium text-accent">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-xl md:text-2xl">{etapa.titulo}</h3>
+              <p className="text-base text-fg-soft">{etapa.texto}</p>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 }

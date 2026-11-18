@@ -107,9 +107,14 @@
 - [x] 07.6 lint ✅ · tsc ✅ · build ✅ · 375px sem rolagem horizontal ✅ · 768px ✅ · 1536px ✅
 
 ### 🔵 FASE 08: CORAÇÃO
-**Status:** `⏳ Aguardando`
-**Progresso:** 0/5 tarefas (0%)
-- 6 Pilares, Catálogo (7 soluções + ecossistema), Como funciona (4 etapas), Por que YASCOM
+**Status:** `✅ Completa` (aguardando revisão visual de Kleber)
+**Progresso:** 5/5 tarefas (100%)
+- [x] 08.1 `Pilares.tsx` (novo, `#resultados`): 6 cards numerados (pilar 1 sem "5x") + CTA
+- [x] 08.2 `Catalogo.tsx` (novo, `#solucoes`): 7 soluções com etiquetas e CTA por solução; bloco do ecossistema ocupa o espaço ao lado do 7º card
+- [x] 08.3 `ComoFunciona.tsx`: 4 etapas (1 col celular · 2 col tablet · 4 col desktop com linha)
+- [x] 08.4 `PorQueYascom.tsx`: mesmo conteúdo, tema escuro, texto em `landing.ts`
+- [x] 08.5 `Solucoes.tsx` removido · lint ✅ · tsc ✅ · build ✅ · sem rolagem lateral em 375/768/1024/1280 ✅
+**Correções:** mensagem do WhatsApp de Agentes terminava em "I.A.." (ponto duplo), corrigido em `whatsapp.ts`; 4 colunas do método estouravam a largura em 768px, corrigido com 2 colunas no tablet.
 
 ### 🔵 FASE 09: FECHAMENTO
 **Status:** `⏳ Aguardando`
