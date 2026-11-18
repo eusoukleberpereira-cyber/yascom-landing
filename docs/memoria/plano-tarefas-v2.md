@@ -1,5 +1,7 @@
 # Plano de Tarefas — YASCOM Landing v2 ("Sala de Controle")
 
+> ❌ **CANCELADO em 2026-11-18.** Kleber não aprovou a v2; o site voltou ao modelo anterior. Arquivo mantido só como registro histórico.
+
 **Autor:** Hades · **Data:** 2026-11-18
 **Fonte:** `docs/memoria/projeto.md` v2.0, `design-system.json` v2.0, `moscow.md` (aprovado)
 **Decisões técnicas:** `docs/decisions/ADR-001-landing-v2-estilo-e-conteudo.md`

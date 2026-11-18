@@ -1,6 +1,6 @@
 # ADR-001 — Landing v2: tokens no Tailwind e conteúdo como dados
 
-**Status:** Aceito
+**Status:** Revogado (2026-11-18) — a landing v2 foi cancelada por Kleber e o código voltou ao modelo v1. Mantido como registro.
 **Data:** 2026-11-18
 **Autor:** Hades
 

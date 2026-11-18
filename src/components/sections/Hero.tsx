@@ -1,79 +1,273 @@
-import { ArrowRight, Bot } from "lucide-react";
-import { hero } from "@/content/landing";
-import { CtaWhatsApp } from "@/components/ui/CtaWhatsApp";
+import { MessageCircle, ArrowRight } from "lucide-react";
+import { WA } from "@/lib/whatsapp";
 
 export function Hero() {
   return (
     <section
-      id="topo"
-      aria-labelledby="hero-titulo"
-      className="bg-grid overflow-hidden border-b border-line pt-[calc(72px+56px)] pb-20 md:pt-[calc(72px+96px)] md:pb-28"
+      style={{
+        paddingTop: "calc(72px + 80px)",
+        paddingBottom: "80px",
+        backgroundColor: "var(--color-bg-primary)",
+        overflow: "hidden",
+      }}
     >
-      <div className="container grid items-center gap-12 md:grid-cols-[1.25fr_1fr]">
-        <div className="flex flex-col items-start">
-          <p className="label-mono mb-6">{hero.label}</p>
-
-          <h1 id="hero-titulo" className="mb-6">
-            {hero.titulo} <span className="text-accent">{hero.tituloDestaque}</span>
-          </h1>
-
-          <p className="mb-10 max-w-xl text-lg text-fg-soft md:text-xl">{hero.subtitulo}</p>
-
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
-            <CtaWhatsApp className="[&>a]:w-full sm:[&>a]:w-auto">{hero.ctaPrimario}</CtaWhatsApp>
-            <a href={hero.ctaSecundario.href} className="btn-secondary w-full sm:w-auto">
-              {hero.ctaSecundario.texto}
-              <ArrowRight size={18} aria-hidden="true" />
-            </a>
-          </div>
-          <p className="mt-4 text-sm text-fg-muted">{hero.microcopy}</p>
-
-          <dl className="mt-12 grid w-full grid-cols-3 gap-4 border-t border-line pt-8">
-            {hero.indicadores.map((item) => (
-              <div key={item.rotulo} className="flex flex-col gap-1">
-                <dt className="order-2 text-xs text-fg-muted sm:text-sm">{item.rotulo}</dt>
-                <dd className="order-1 font-display text-xl leading-tight font-black text-accent italic sm:text-2xl md:text-3xl">
-                  {item.valor}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-
-        {/* Conversa simulada com o Agente: só a partir de 768px */}
-        <div className="hidden justify-center md:flex" aria-hidden="true">
-          <div className="w-full max-w-[320px] rounded-2xl border border-line bg-raised p-6">
-            <div className="mb-5 flex items-center gap-3 border-b border-line pb-4">
-              <span className="flex size-10 items-center justify-center rounded-full bg-accent-subtle text-accent">
-                <Bot size={20} />
-              </span>
-              <span className="flex flex-col">
-                <span className="text-sm font-semibold text-fg">{hero.conversa.nome}</span>
-                <span className="flex items-center gap-1.5 font-mono text-[0.6875rem] tracking-wider text-fg-muted uppercase">
-                  <span className="size-1.5 rounded-full bg-whatsapp" />
-                  {hero.conversa.status}
-                </span>
+      <div className="container">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: "48px",
+            alignItems: "center",
+          }}
+          className="hero-grid"
+        >
+          {/* Conteúdo */}
+          <div style={{ maxWidth: "680px" }}>
+            {/* Badge */}
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                backgroundColor: "var(--color-accent-light)",
+                border: "1px solid var(--color-accent)",
+                borderRadius: "var(--radius-full)",
+                padding: "6px 16px",
+                marginBottom: "32px",
+              }}
+            >
+              <span
+                style={{
+                  width: "6px",
+                  height: "6px",
+                  borderRadius: "50%",
+                  backgroundColor: "var(--color-accent)",
+                  display: "inline-block",
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "var(--text-sm)",
+                  fontWeight: 600,
+                  color: "var(--color-accent)",
+                }}
+              >
+                IA + CRM sob medida para empresas
               </span>
             </div>
 
-            <ul className="flex flex-col gap-2">
-              {hero.conversa.mensagens.map((m) => (
-                <li key={m.texto} className={`flex ${m.cliente ? "justify-end" : "justify-start"}`}>
-                  <span
-                    className={`max-w-[85%] px-3 py-2 text-sm leading-snug ${
-                      m.cliente
-                        ? "rounded-[12px_12px_2px_12px] bg-accent text-on-accent"
-                        : "rounded-[12px_12px_12px_2px] bg-surface text-fg"
-                    }`}
+            {/* Headline */}
+            <h1
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+                fontWeight: 900,
+                fontStyle: "italic",
+                color: "var(--color-text-primary)",
+                lineHeight: 1.05,
+                marginBottom: "24px",
+              }}
+            >
+              Seu atendimento
+              <br />
+              no{" "}
+              <span style={{ color: "var(--color-accent)" }}>
+                piloto automático.
+              </span>
+            </h1>
+
+            {/* Subheadline */}
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "var(--text-xl)",
+                color: "var(--color-text-secondary)",
+                lineHeight: 1.6,
+                marginBottom: "40px",
+                maxWidth: "560px",
+              }}
+            >
+              Agentes de IA e CRM personalizados para empresas que não aceitam
+              perder clientes por falha no atendimento.
+            </p>
+
+            {/* CTAs */}
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+              <a
+                href={WA.hero}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                <MessageCircle size={18} />
+                Falar com a YASCOM
+              </a>
+              <a href="#solucoes" className="btn-secondary">
+                Ver soluções
+                <ArrowRight size={18} />
+              </a>
+            </div>
+
+            {/* Stats */}
+            <div
+              style={{
+                marginTop: "48px",
+                paddingTop: "32px",
+                borderTop: "1px solid var(--color-border)",
+                display: "flex",
+                gap: "32px",
+                flexWrap: "wrap",
+              }}
+            >
+              {[
+                { value: "24/7", label: "Atendimento contínuo" },
+                { value: "100%", label: "Personalizado" },
+                { value: "1:1", label: "Suporte do fundador" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "var(--text-3xl)",
+                      fontWeight: 900,
+                      fontStyle: "italic",
+                      color: "var(--color-accent)",
+                      lineHeight: 1,
+                    }}
                   >
-                    {m.texto}
-                  </span>
-                </li>
+                    {stat.value}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "var(--text-sm)",
+                      color: "var(--color-text-muted)",
+                      marginTop: "4px",
+                    }}
+                  >
+                    {stat.label}
+                  </p>
+                </div>
               ))}
-            </ul>
+            </div>
+          </div>
+
+          {/* Visual decorativo — visível apenas desktop */}
+          <div
+            className="hero-visual"
+            style={{
+              position: "relative",
+              height: "400px",
+              alignItems: "center",
+              justifyContent: "center",
+              display: "none",
+            }}
+          >
+            <div
+              style={{
+                width: "320px",
+                height: "320px",
+                borderRadius: "50%",
+                background:
+                  "radial-gradient(circle, rgba(255,75,0,0.12) 0%, rgba(255,75,0,0.03) 60%, transparent 100%)",
+                position: "absolute",
+              }}
+            />
+            <div
+              style={{
+                border: "1px solid var(--color-border)",
+                borderRadius: "var(--radius-xl)",
+                padding: "28px",
+                backgroundColor: "var(--color-bg-white)",
+                boxShadow: "var(--shadow-lg)",
+                maxWidth: "280px",
+                position: "relative",
+                width: "100%",
+              }}
+            >
+              <div style={{ marginBottom: "16px" }}>
+                <div
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    backgroundColor: "var(--color-accent-light)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <span style={{ fontSize: "20px" }}>🤖</span>
+                </div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "var(--text-sm)",
+                    fontWeight: 600,
+                    color: "var(--color-text-primary)",
+                    margin: 0,
+                  }}
+                >
+                  Agente YASCOM
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "var(--text-xs)",
+                    color: "var(--color-text-muted)",
+                    margin: "2px 0 0",
+                  }}
+                >
+                  Online agora • Responde em segundos
+                </p>
+              </div>
+              {[
+                { msg: "Olá! Como posso ajudar?", own: false },
+                { msg: "Quero saber sobre os planos", own: true },
+                { msg: "Claro! Vou te passar todas as informações 👇", own: false },
+              ].map((m, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: "flex",
+                    justifyContent: m.own ? "flex-end" : "flex-start",
+                    marginBottom: "8px",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "var(--text-xs)",
+                      backgroundColor: m.own
+                        ? "var(--color-accent)"
+                        : "var(--color-bg-secondary)",
+                      color: m.own ? "#fff" : "var(--color-text-primary)",
+                      borderRadius: m.own
+                        ? "12px 12px 2px 12px"
+                        : "12px 12px 12px 2px",
+                      padding: "8px 12px",
+                      maxWidth: "80%",
+                      lineHeight: 1.4,
+                      display: "inline-block",
+                    }}
+                  >
+                    {m.msg}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (min-width: 768px) {
+          .hero-grid { grid-template-columns: 1fr 1fr !important; }
+          .hero-visual { display: flex !important; }
+        }
+      `}</style>
     </section>
   );
 }

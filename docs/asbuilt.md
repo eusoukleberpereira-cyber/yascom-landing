@@ -78,9 +78,11 @@
 
 ---
 
-# 🟠 LANDING v2 — "Sala de Controle"
+# ⚪ LANDING v2 — "Sala de Controle" · `❌ Cancelada`
 
-> Spec: `docs/memoria/projeto.md` v2.0 · Plano detalhado: `docs/memoria/plano-tarefas-v2.md` · Decisões: `docs/decisions/ADR-001-landing-v2-estilo-e-conteudo.md`
+> **2026-11-18:** Kleber revisou a v2 completa em localhost e não aprovou. Código, spec, design system e MoSCoW restaurados ao estado de antes da v2 (`9e8f644`) por um commit de restauração em `dev`. A v2 nunca chegou a `hml` nem a `main`; o site em produção não foi alterado. O histórico abaixo fica como registro; o código da v2 continua recuperável no git (commits `de53a58` → `e75c773`).
+>
+> Spec v2 (histórico): `docs/memoria/projeto.md` v2.0 · Plano detalhado: `docs/memoria/plano-tarefas-v2.md` · Decisões: `docs/decisions/ADR-001-landing-v2-estilo-e-conteudo.md`
 
 ### 🔵 FASE 06: FUNDAÇÃO v2
 **Status:** `✅ Completa` (aguardando revisão visual de Kleber)
@@ -160,3 +162,5 @@
 | 2026-11-13 | Seção Clientes revertida a pedido de Kleber — site volta ao estado anterior |
 | 2026-11-18 | Shiva: spec v2.0 (tema escuro "Sala de Controle", 6 pilares, catálogo com 7 soluções, diagnóstico gratuito), MoSCoW v2 aprovado |
 | 2026-11-18 | Hades: ADR-001, plano das Fases 06–10 e copy deck completo em `plano-tarefas-v2.md` |
+| 2026-11-18 | Atlas: Fases 06–09 + 10.1/10.2 executadas em `dev` (de53a58 → e75c773) |
+| 2026-11-18 | Kleber não aprovou a v2. Site restaurado ao modelo anterior em `dev`; v2 cancelada |

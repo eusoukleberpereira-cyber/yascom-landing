@@ -1,16 +1,11 @@
 import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
-import { Virada } from "@/components/sections/Virada";
-import { Dores } from "@/components/sections/Dores";
-import { Pilares } from "@/components/sections/Pilares";
-import { Catalogo } from "@/components/sections/Catalogo";
+import { Problema } from "@/components/sections/Problema";
+import { Solucoes } from "@/components/sections/Solucoes";
 import { ComoFunciona } from "@/components/sections/ComoFunciona";
 import { PorQueYascom } from "@/components/sections/PorQueYascom";
-import { Oferta } from "@/components/sections/Oferta";
-import { FAQ } from "@/components/sections/FAQ";
-import { Fechamento } from "@/components/sections/Fechamento";
+import { CTAFinal } from "@/components/sections/CTAFinal";
 import { Footer } from "@/components/sections/Footer";
-import { WhatsAppFlutuante } from "@/components/sections/WhatsAppFlutuante";
 
 export default function Home() {
   return (
@@ -18,19 +13,13 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Virada />
-        <Dores />
-        <Pilares />
-        <Catalogo />
+        <Problema />
+        <Solucoes />
         <ComoFunciona />
         <PorQueYascom />
-        {/* Espaço reservado: Depoimentos (quando houver depoimentos reais) */}
-        <Oferta />
-        <FAQ />
-        <Fechamento />
+        <CTAFinal />
       </main>
       <Footer />
-      <WhatsAppFlutuante />
     </>
   );
 }

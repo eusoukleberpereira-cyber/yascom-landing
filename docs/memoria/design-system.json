@@ -1,111 +1,133 @@
 {
   "project": "YASCOM Landing Page",
-  "direction": "Sala de Controle",
-  "version": "2.0",
-  "date": "2026-11-18",
-  "notes": "v2 = tema escuro com assinatura própria. Grafite quente + creme da marca + laranja só em ação/detalhe. Contrastes verificados (WCAG AA) contra os 3 fundos. v1 (creme 'Ousadia Calculada') aposentada.",
-
-  "principles": [
-    "Escuro editorial, não escuro 'curso de IA': Fraunces itálico no lugar de sans pesada",
-    "Laranja é verbo: só em botões, números e marcadores, nunca em brilho de fundo",
-    "Painel de controle: etiquetas mono, grade fina, linhas de 1px",
-    "Cada seção tem um único trabalho na escada de convencimento",
-    "Celular primeiro: o dono de empresa lê no WhatsApp e no Instagram"
-  ],
+  "direction": "Ousadia Calculada",
+  "version": "1.0",
 
   "colors": {
     "background": {
-      "base": "#141210",
-      "raised": "#1B1916",
-      "surface": "#22201C",
-      "grid": "rgba(244, 241, 236, 0.04)"
+      "primary": "#F4F1EC",
+      "secondary": "#EDEAE3",
+      "dark": "#1C1C1C",
+      "white": "#FFFFFF"
     },
     "text": {
-      "primary": "#F4F1EC",
-      "secondary": "#B8B1A7",
-      "muted": "#8F887E",
-      "on-accent": "#141210"
+      "primary": "#1C1C1C",
+      "secondary": "#5C5855",
+      "inverted": "#F4F1EC",
+      "muted": "#8C8784"
     },
     "accent": {
       "primary": "#FF4B00",
-      "hover": "#FF6A2B",
-      "subtle": "rgba(255, 75, 0, 0.12)"
+      "hover": "#E03E00",
+      "light": "#FFF0EB"
     },
     "border": {
-      "default": "#34302A",
-      "strong": "#4A453D",
-      "accent": "#FF4B00"
-    },
-    "whatsapp": "#25D366"
-  },
-
-  "contrast": {
-    "text-primary/base": "16.59",
-    "text-secondary/base": "8.80",
-    "text-muted/base": "5.33",
-    "text-muted/surface": "4.64",
-    "accent/base": "5.57",
-    "accent/surface": "4.85",
-    "on-accent/accent (botão)": "5.57",
-    "branco/accent (NÃO USAR)": "3.36"
+      "default": "#D9D5CE",
+      "strong": "#1C1C1C"
+    }
   },
 
   "typography": {
-    "display": { "family": "Fraunces", "weight": "900", "style": "italic", "usage": "Hero e títulos de seção" },
-    "heading": { "family": "Fraunces", "weight": "700", "style": "normal", "usage": "Títulos de cards" },
-    "body": { "family": "DM Sans", "weight": "400", "usage": "Parágrafos" },
-    "body-strong": { "family": "DM Sans", "weight": "600", "usage": "Destaques, botões" },
-    "label": { "family": "JetBrains Mono", "weight": "500", "transform": "uppercase", "letterSpacing": "0.12em", "usage": "Etiquetas tipo '01 / AGENTES DE I.A.', números de etapa" }
+    "display": {
+      "family": "Fraunces",
+      "weight": "900",
+      "style": "italic",
+      "usage": "Headlines principais, hero, títulos de seção"
+    },
+    "heading": {
+      "family": "Fraunces",
+      "weight": "700",
+      "style": "normal",
+      "usage": "Subtítulos, títulos de cards"
+    },
+    "body": {
+      "family": "DM Sans",
+      "weight": "400",
+      "style": "normal",
+      "usage": "Parágrafos, descrições, textos gerais"
+    },
+    "body-strong": {
+      "family": "DM Sans",
+      "weight": "600",
+      "style": "normal",
+      "usage": "Textos de destaque, labels, botões"
+    },
+    "caption": {
+      "family": "DM Sans",
+      "weight": "400",
+      "style": "normal",
+      "usage": "Textos pequenos, notas, footer"
+    }
   },
 
   "spacing": {
     "base": "8px",
-    "scale": { "1": "8px", "2": "16px", "3": "24px", "4": "32px", "5": "40px", "6": "48px", "8": "64px", "10": "80px", "12": "96px", "16": "128px" },
-    "section-desktop": "128px",
-    "section-mobile": "80px"
+    "scale": {
+      "1": "8px",
+      "2": "16px",
+      "3": "24px",
+      "4": "32px",
+      "5": "40px",
+      "6": "48px",
+      "8": "64px",
+      "10": "80px",
+      "12": "96px",
+      "16": "128px",
+      "20": "160px"
+    },
+    "section": "96px"
   },
 
-  "borderRadius": { "sm": "4px", "md": "8px", "lg": "16px", "full": "9999px" },
+  "borderRadius": {
+    "sm": "4px",
+    "md": "8px",
+    "lg": "16px",
+    "xl": "24px",
+    "full": "9999px"
+  },
 
   "shadows": {
-    "none-preferred": "No escuro, profundidade vem de borda + mudança de fundo, não de sombra",
-    "accent": "0 0 0 1px #FF4B00"
+    "sm": "0 1px 3px rgba(28, 28, 28, 0.08)",
+    "md": "0 4px 16px rgba(28, 28, 28, 0.10)",
+    "lg": "0 8px 32px rgba(28, 28, 28, 0.12)",
+    "accent": "0 4px 24px rgba(255, 75, 0, 0.25)"
   },
 
   "components": {
     "button-primary": {
       "background": "#FF4B00",
-      "color": "#141210",
+      "color": "#FFFFFF",
       "borderRadius": "9999px",
       "padding": "16px 32px",
       "font": "DM Sans 600",
-      "hover-background": "#FF6A2B",
-      "focus": "outline 2px #F4F1EC, offset 3px"
+      "hover-background": "#E03E00",
+      "shadow": "0 4px 24px rgba(255, 75, 0, 0.30)"
     },
     "button-secondary": {
       "background": "transparent",
-      "color": "#F4F1EC",
-      "border": "1px solid #4A453D",
-      "hover-border": "#FF4B00"
+      "color": "#1C1C1C",
+      "border": "2px solid #1C1C1C",
+      "borderRadius": "9999px",
+      "padding": "14px 32px",
+      "font": "DM Sans 600",
+      "hover-background": "#1C1C1C",
+      "hover-color": "#F4F1EC"
     },
     "card": {
-      "background": "#1B1916",
-      "border": "1px solid #34302A",
+      "background": "#FFFFFF",
+      "border": "1px solid #D9D5CE",
       "borderRadius": "16px",
       "padding": "32px",
-      "hover-border": "#FF4B00"
+      "shadow": "0 4px 16px rgba(28, 28, 28, 0.08)"
     },
-    "label-mono": {
-      "font": "JetBrains Mono 500",
-      "size": "12px",
-      "color": "#FF4B00"
+    "card-dark": {
+      "background": "#1C1C1C",
+      "borderRadius": "16px",
+      "padding": "32px"
     }
   },
 
-  "motion": {
-    "reveal": "fade + translateY(16px), 500ms, ease-out, stagger 80ms",
-    "reduced-motion": "desligar todas as animações"
-  },
-
-  "forbidden": ["gradiente roxo", "glassmorphism", "brilho neon/glow de fundo", "Inter como fonte principal", "foto de banco de imagem com óculos VR", "texto branco sobre laranja"]
+  "googleFonts": {
+    "url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,900&family=DM+Sans:wght@400;500;600&display=swap"
+  }
 }
