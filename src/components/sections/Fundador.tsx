@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { CalendarCheck } from "lucide-react";
+import { WA } from "@/lib/whatsapp";
 import fotoKleber from "@/assets/kleber-fundador.jpg";
 
 /** Bloco do fundador: foto do Kleber + visão, missão e compromisso da YASCOM. */
@@ -122,10 +124,23 @@ export function Fundador() {
             Fundador da YASCOM Inteligência Digital
           </p>
         </div>
+
+        <a
+          href={WA.reuniao}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary fundador-cta"
+          style={{ marginTop: "28px" }}
+        >
+          <CalendarCheck size={18} aria-hidden="true" />
+          Marcar Reunião Estratégica
+        </a>
       </div>
 
       <style>{`
+        .fundador-cta { width: 100%; justify-content: center; }
         @media (min-width: 768px) {
+          .fundador-cta { width: auto; }
           .fundador-grid { grid-template-columns: 0.85fr 1.15fr !important; gap: 72px !important; }
         }
       `}</style>

@@ -11,5 +11,5 @@ export const WA = {
   api:        encode("Olá Kleber! Quero saber mais sobre a API Oficial do WhatsApp Business com a YASCOM."),
   automacoes: encode("Olá Kleber! Quero automatizar tarefas internas da minha empresa. Como funciona?"),
   documentos: encode("Olá Kleber! Tenho interesse no Processamento de Documentos com IA da YASCOM."),
-  cta:      encode("Olá Kleber! Quero transformar o atendimento da minha empresa. Por onde começamos?"),
+  reuniao:    encode("Olá Kleber! Vi o site da YASCOM e quero marcar uma Reunião Estratégica. Qual o melhor dia e horário?"),
 };

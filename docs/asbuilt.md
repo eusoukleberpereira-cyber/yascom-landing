@@ -153,6 +153,8 @@
 | 2026-11-18 | `backup-pre-prod-20261118-132146` | Pré-produção (Soluções +3) | ✅ |
 | 2026-11-18 | `backup-pre-hml-20261118-145711` | Pré-HML (headline, painel, dobra) | ✅ |
 | 2026-11-18 | `backup-pre-prod-20261118-145728` | Pré-produção (headline, painel, dobra) | ✅ |
+| 2026-11-18 | `backup-pre-hml-20261118-165533` | Pré-HML (fundador + logos) | ✅ |
+| 2026-11-18 | `backup-pre-prod-20261118-165556` | Pré-produção (fundador + logos) | ✅ |
 
 ## Histórico de Sessões
 
@@ -174,4 +176,6 @@
 | 2026-11-18 | Hero compactado: primeira dobra inteira a 100% de zoom em 1366×657, 1536×695, 1440×760 e 1920×937; espaço Hero → Problema reduzido |
 | 2026-11-18 | CTA final: "Resposta em até 24 horas" → "Resposta no mesmo dia" (contradizia a dor "clientes esperando horas") |
 | 2026-11-18 | Publicado em produção (`main` 02f5820) a pedido de Kleber ("pode publicar"); Ravena e Kerberos não executados; Atlas verificou build, lint, secrets, dobra e site no ar |
+| 2026-11-18 | Bloco do fundador (`Fundador.tsx`, foto `src/assets/kleber-fundador.jpg`, "Kleber Pereira") ao fim de Por que a YASCOM; faixa `Clientes.tsx` com 10 logos (grade estática, cinza → cor no hover) entre Hero e Problema. Bastidores Elegance sem logo (só foto de pessoa no Instagram); Morais & Morais fora da lista nova |
+| 2026-11-18 | Publicado em produção (`main` b8f10a2) a pedido de Kleber; Ravena e Kerberos não executados; Atlas verificou build, textos e imagens no ar (foto do fundador servida em WebP, ~26 KB) |
 | 2026-11-18 | Shiva: recomendações pendentes de material de Kleber: caso real de cliente, foto do fundador, oferta "diagnóstico gratuito", FAQ, segmentos, integrações, política de privacidade, medição de cliques, domínio yascom.com.br, WhatsApp flutuante |
