@@ -5,7 +5,6 @@ import { Problema } from "@/components/sections/Problema";
 import { Solucoes } from "@/components/sections/Solucoes";
 import { ComoFunciona } from "@/components/sections/ComoFunciona";
 import { PorQueYascom } from "@/components/sections/PorQueYascom";
-import { CTAFinal } from "@/components/sections/CTAFinal";
 import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
         <Solucoes />
         <ComoFunciona />
         <PorQueYascom />
-        <CTAFinal />
       </main>
       <Footer />
     </>
