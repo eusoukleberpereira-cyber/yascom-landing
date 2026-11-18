@@ -119,7 +119,7 @@ export function Solucoes() {
                       left: "50%",
                       transform: "translateX(-50%)",
                       backgroundColor: "var(--color-accent)",
-                      color: "#fff",
+                      color: "var(--color-text-on-accent)",
                       fontFamily: "var(--font-body)",
                       fontSize: "var(--text-xs)",
                       fontWeight: 600,

@@ -21,7 +21,7 @@ export function Header() {
         left: 0,
         right: 0,
         zIndex: 100,
-        backgroundColor: scrolled ? "rgba(244,241,236,0.95)" : "var(--color-bg-primary)",
+        backgroundColor: scrolled ? "rgba(20,18,16,0.92)" : "var(--color-bg-primary)",
         borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
         backdropFilter: scrolled ? "blur(8px)" : "none",
         transition: "all var(--transition-normal)",

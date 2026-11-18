@@ -83,9 +83,18 @@
 > Spec: `docs/memoria/projeto.md` v2.0 · Plano detalhado: `docs/memoria/plano-tarefas-v2.md` · Decisões: `docs/decisions/ADR-001-landing-v2-estilo-e-conteudo.md`
 
 ### 🔵 FASE 06: FUNDAÇÃO v2
-**Status:** `⏳ Aguardando`
-**Progresso:** 0/9 tarefas (0%)
-- Tokens escuros no Tailwind (`@theme`), JetBrains Mono, botões/cards v2, mensagens WhatsApp do diagnóstico, `src/content/landing.ts`, componentes base, SEO v2
+**Status:** `✅ Completa` (aguardando revisão visual de Kleber)
+**Progresso:** 9/9 tarefas (100%)
+- [x] 06.1 Tokens v2 no Tailwind (`@theme static`) + apelidos legados para as seções antigas
+- [x] 06.2 JetBrains Mono via `next/font`; variáveis renomeadas (`--font-fraunces`, `--font-dm-sans`, `--font-jetbrains`) para não colidir com os tokens
+- [x] 06.3 Botões/cards/label-mono/bg-grid v2, foco visível, reduced-motion; estilos de elemento movidos para `@layer base`
+- [x] 06.4 `whatsapp.ts`: mensagens do diagnóstico + 7 por solução (chaves legadas mantidas até Fase 09)
+- [x] 06.5 `src/content/landing.ts` com o copy deck completo
+- [x] 06.6 `src/components/ui/`: `Section`, `SectionHeader`, `CtaWhatsApp`
+- [x] 06.7 SEO v2 + `viewport.themeColor`
+- [x] 06.8 Seções antigas legíveis no escuro (3 cores fixas trocadas)
+- [x] 06.9 lint ✅ · tsc ✅ · build ✅ · verificação visual em localhost ✅
+**Notas:** o brilho laranja do `CTAFinal.tsx` (proibido no design v2) sai na Fase 09, quando a seção é substituída.
 
 ### 🔵 FASE 07: TOPO DA ESCADA
 **Status:** `⏳ Aguardando`

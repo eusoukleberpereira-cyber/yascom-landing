@@ -243,7 +243,7 @@ export function Hero() {
                       backgroundColor: m.own
                         ? "var(--color-accent)"
                         : "var(--color-bg-secondary)",
-                      color: m.own ? "#fff" : "var(--color-text-primary)",
+                      color: m.own ? "var(--color-text-on-accent)" : "var(--color-text-primary)",
                       borderRadius: m.own
                         ? "12px 12px 2px 12px"
                         : "12px 12px 12px 2px",

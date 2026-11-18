@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Fraunces, DM_Sans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
@@ -7,52 +7,68 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
   style: ["normal", "italic"],
-  variable: "--font-display",
+  variable: "--font-fraunces",
   display: "swap",
 });
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-body",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["500"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
+const title = "YASCOM | I.A., Automação, Sistemas e Tráfego Pago para Empresas";
+const description =
+  "Agentes de I.A., CRM personalizado, automações, sistemas e tráfego pago construídos sob medida para a sua empresa vender mais sem aumentar a equipe. Peça seu diagnóstico gratuito.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://yascom-landing.vercel.app"),
-  title: "YASCOM | Agentes de IA e CRM para Empresas",
-  description:
-    "Soluções de Inteligência Artificial e CRM personalizados para transformar o atendimento da sua empresa. Fale com a YASCOM e descubra qual solução faz sentido para o seu negócio.",
+  title,
+  description,
   keywords: [
     "agente de IA",
     "CRM personalizado",
     "atendimento automatizado",
     "inteligência artificial",
-    "CRM para empresas",
-    "agente de atendimento",
+    "automação de processos",
+    "API oficial do WhatsApp",
+    "tráfego pago",
+    "sistemas sob medida",
+    "processamento de documentos",
     "automação de vendas",
     "YASCOM",
   ],
   authors: [{ name: "YASCOM Inteligência Digital" }],
   creator: "YASCOM",
   openGraph: {
-    title: "YASCOM | Agentes de IA e CRM para Empresas",
-    description:
-      "Agentes de IA e CRM sob medida para empresas que não aceitam perder clientes por falha no atendimento.",
+    title,
+    description,
     siteName: "YASCOM",
     locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "YASCOM | Agentes de IA e CRM para Empresas",
-    description:
-      "Agentes de IA e CRM sob medida para empresas que não aceitam perder clientes.",
+    title,
+    description,
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#141210",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -63,7 +79,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${fraunces.variable} ${dmSans.variable}`}
+      className={`${fraunces.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
       <body>
         {children}
