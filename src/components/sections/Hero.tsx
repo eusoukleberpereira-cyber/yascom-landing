@@ -6,8 +6,8 @@ export function Hero() {
   return (
     <section
       style={{
-        paddingTop: "calc(72px + 80px)",
-        paddingBottom: "80px",
+        paddingTop: "calc(72px + 16px)",
+        paddingBottom: "40px",
         backgroundColor: "var(--color-bg-primary)",
         overflow: "hidden",
       }}

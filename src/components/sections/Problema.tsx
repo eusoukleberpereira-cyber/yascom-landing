@@ -33,7 +33,7 @@ const DORES = [
 
 export function Problema() {
   return (
-    <section className="secondary" id="problema">
+    <section className="secondary" id="problema" style={{ paddingTop: "56px" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "64px" }}>
           <p
