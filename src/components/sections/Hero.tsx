@@ -1,5 +1,6 @@
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { WA } from "@/lib/whatsapp";
+import { HeroPainel } from "./HeroPainel";
 
 export function Hero() {
   return (
@@ -53,7 +54,7 @@ export function Hero() {
                   color: "var(--color-accent)",
                 }}
               >
-                IA + CRM sob medida para empresas
+                IA, CRM e automações sob medida
               </span>
             </div>
 
@@ -158,7 +159,7 @@ export function Hero() {
             className="hero-visual"
             style={{
               position: "relative",
-              height: "400px",
+              minHeight: "400px",
               alignItems: "center",
               justifyContent: "center",
               display: "none",
@@ -166,98 +167,15 @@ export function Hero() {
           >
             <div
               style={{
-                width: "320px",
-                height: "320px",
+                width: "420px",
+                height: "420px",
                 borderRadius: "50%",
                 background:
                   "radial-gradient(circle, rgba(255,75,0,0.12) 0%, rgba(255,75,0,0.03) 60%, transparent 100%)",
                 position: "absolute",
               }}
             />
-            <div
-              style={{
-                border: "1px solid var(--color-border)",
-                borderRadius: "var(--radius-xl)",
-                padding: "28px",
-                backgroundColor: "var(--color-bg-white)",
-                boxShadow: "var(--shadow-lg)",
-                maxWidth: "280px",
-                position: "relative",
-                width: "100%",
-              }}
-            >
-              <div style={{ marginBottom: "16px" }}>
-                <div
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    backgroundColor: "var(--color-accent-light)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: "10px",
-                  }}
-                >
-                  <span style={{ fontSize: "20px" }}>🤖</span>
-                </div>
-                <p
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "var(--text-sm)",
-                    fontWeight: 600,
-                    color: "var(--color-text-primary)",
-                    margin: 0,
-                  }}
-                >
-                  Agente YASCOM
-                </p>
-                <p
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "var(--text-xs)",
-                    color: "var(--color-text-muted)",
-                    margin: "2px 0 0",
-                  }}
-                >
-                  Online agora • Responde em segundos
-                </p>
-              </div>
-              {[
-                { msg: "Olá! Como posso ajudar?", own: false },
-                { msg: "Quero saber sobre os planos", own: true },
-                { msg: "Claro! Vou te passar todas as informações 👇", own: false },
-              ].map((m, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: "flex",
-                    justifyContent: m.own ? "flex-end" : "flex-start",
-                    marginBottom: "8px",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "var(--text-xs)",
-                      backgroundColor: m.own
-                        ? "var(--color-accent)"
-                        : "var(--color-bg-secondary)",
-                      color: m.own ? "#fff" : "var(--color-text-primary)",
-                      borderRadius: m.own
-                        ? "12px 12px 2px 12px"
-                        : "12px 12px 12px 2px",
-                      padding: "8px 12px",
-                      maxWidth: "80%",
-                      lineHeight: 1.4,
-                      display: "inline-block",
-                    }}
-                  >
-                    {m.msg}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <HeroPainel />
           </div>
         </div>
       </div>
