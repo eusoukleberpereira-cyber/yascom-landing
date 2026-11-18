@@ -6,7 +6,7 @@ const DIFERENCIAIS = [
     icon: UserCheck,
     titulo: "Acompanhamento do fundador",
     descricao:
-      "Não é um suporte terceirizado. É o Kleber, fundador da YASCOM, que acompanha você do primeiro contato até o sistema funcionando. E depois também.",
+      "Não é um suporte terceirizado. É o Kleber Pereira, fundador da YASCOM, que acompanha você do primeiro contato até o sistema funcionando. E depois também.",
   },
   {
     icon: Settings,

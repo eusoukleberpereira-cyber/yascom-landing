@@ -29,7 +29,7 @@ export function Fundador() {
         />
         <Image
           src={fotoKleber}
-          alt="Kleber, fundador da YASCOM Inteligência Digital"
+          alt="Kleber Pereira, fundador da YASCOM Inteligência Digital"
           placeholder="blur"
           sizes="(min-width: 768px) 400px, 100vw"
           style={{
@@ -72,7 +72,7 @@ export function Fundador() {
           }}
         >
           <p>
-            Sou o <strong style={{ color: "var(--color-text-primary)" }}>Kleber</strong>, fundador da
+            Sou o <strong style={{ color: "var(--color-text-primary)" }}>Kleber Pereira</strong>, fundador da
             YASCOM.
           </p>
           <p>
@@ -109,7 +109,7 @@ export function Fundador() {
               lineHeight: 1.2,
             }}
           >
-            Kleber
+            Kleber Pereira
           </p>
           <p
             style={{
