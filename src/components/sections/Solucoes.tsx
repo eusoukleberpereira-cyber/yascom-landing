@@ -1,4 +1,12 @@
-import { Bot, LayoutDashboard, Layers, MessageCircle } from "lucide-react";
+import {
+  BadgeCheck,
+  Bot,
+  LayoutDashboard,
+  Layers,
+  MessageCircle,
+  ScanText,
+  Workflow,
+} from "lucide-react";
 import { WA } from "@/lib/whatsapp";
 
 const SOLUCOES = [
@@ -43,6 +51,48 @@ const SOLUCOES = [
     ],
     waLink: "completo" as const,
     destaque: true,
+  },
+  {
+    icon: BadgeCheck,
+    tag: "WhatsApp oficial",
+    titulo: "API Oficial WhatsApp Business",
+    waLink: "api" as const,
+    descricao:
+      "Seu WhatsApp conectado à API oficial da Meta. Mais estabilidade, vários atendentes no mesmo número e sem o risco de bloqueio das ferramentas não oficiais.",
+    destaques: [
+      "Conexão oficial da Meta",
+      "Vários atendentes no mesmo número",
+      "Pronto para Agente de IA e automações",
+    ],
+    destaque: false,
+  },
+  {
+    icon: Workflow,
+    tag: "Rotina no automático",
+    titulo: "Automações de Tarefas Internas",
+    waLink: "automacoes" as const,
+    descricao:
+      "As tarefas que sua equipe repete todo dia passam a acontecer sozinhas: avisos, relatórios, planilhas e cadastros, sem erro e sem esquecimento.",
+    destaques: [
+      "Menos trabalho manual",
+      "Nada cai no esquecimento",
+      "Conecta as ferramentas que você já usa",
+    ],
+    destaque: false,
+  },
+  {
+    icon: ScanText,
+    tag: "Leitura inteligente",
+    titulo: "Processamento de Documentos",
+    waLink: "documentos" as const,
+    descricao:
+      "A IA lê contratos, notas fiscais, comprovantes e formulários, extrai as informações importantes e organiza tudo direto no seu sistema.",
+    destaques: [
+      "Leitura e extração com IA",
+      "Fim da digitação manual",
+      "Dados organizados no seu sistema",
+    ],
+    destaque: false,
   },
 ];
 
