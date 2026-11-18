@@ -23,7 +23,7 @@ export function Hero() {
           className="hero-grid"
         >
           {/* Conteúdo */}
-          <div style={{ maxWidth: "680px" }}>
+          <div style={{ maxWidth: "700px" }}>
             {/* Badge */}
             <div
               style={{
@@ -34,7 +34,7 @@ export function Hero() {
                 border: "1px solid var(--color-accent)",
                 borderRadius: "var(--radius-full)",
                 padding: "6px 16px",
-                marginBottom: "32px",
+                marginBottom: "20px",
               }}
             >
               <span
@@ -62,12 +62,12 @@ export function Hero() {
             <h1
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.25rem, 4.2vw, 3.25rem)",
+                fontSize: "clamp(2.25rem, 3.1vw, 3rem)",
                 fontWeight: 900,
                 fontStyle: "italic",
                 color: "var(--color-text-primary)",
                 lineHeight: 1.05,
-                marginBottom: "24px",
+                marginBottom: "16px",
               }}
             >
               Inteligência Artificial e automações para{" "}
@@ -81,11 +81,11 @@ export function Hero() {
             <p
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "var(--text-xl)",
+                fontSize: "var(--text-lg)",
                 color: "var(--color-text-secondary)",
                 lineHeight: 1.6,
-                marginBottom: "40px",
-                maxWidth: "560px",
+                marginBottom: "28px",
+                maxWidth: "600px",
               }}
             >
               Para empresários e gestores que buscam escalar o negócio de forma
@@ -113,8 +113,8 @@ export function Hero() {
             {/* Stats */}
             <div
               style={{
-                marginTop: "48px",
-                paddingTop: "32px",
+                marginTop: "28px",
+                paddingTop: "20px",
                 borderTop: "1px solid var(--color-border)",
                 display: "flex",
                 gap: "32px",
@@ -130,7 +130,7 @@ export function Hero() {
                   <p
                     style={{
                       fontFamily: "var(--font-display)",
-                      fontSize: "var(--text-3xl)",
+                      fontSize: "var(--text-2xl)",
                       fontWeight: 900,
                       fontStyle: "italic",
                       color: "var(--color-accent)",
@@ -159,7 +159,7 @@ export function Hero() {
             className="hero-visual"
             style={{
               position: "relative",
-              minHeight: "400px",
+              minHeight: "360px",
               alignItems: "center",
               justifyContent: "center",
               display: "none",
@@ -182,7 +182,7 @@ export function Hero() {
 
       <style>{`
         @media (min-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr 1fr !important; }
+          .hero-grid { grid-template-columns: 1.4fr 1fr !important; }
           .hero-visual { display: flex !important; }
         }
       `}</style>
