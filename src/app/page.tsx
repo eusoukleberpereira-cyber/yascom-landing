@@ -1,6 +1,7 @@
 import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
-import { Problema } from "@/components/sections/Problema";
+import { Virada } from "@/components/sections/Virada";
+import { Dores } from "@/components/sections/Dores";
 import { Solucoes } from "@/components/sections/Solucoes";
 import { ComoFunciona } from "@/components/sections/ComoFunciona";
 import { PorQueYascom } from "@/components/sections/PorQueYascom";
@@ -13,7 +14,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Problema />
+        <Virada />
+        <Dores />
         <Solucoes />
         <ComoFunciona />
         <PorQueYascom />

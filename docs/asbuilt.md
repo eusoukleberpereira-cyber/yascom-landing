@@ -97,9 +97,14 @@
 **Notas:** o brilho laranja do `CTAFinal.tsx` (proibido no design v2) sai na Fase 09, quando a seção é substituída.
 
 ### 🔵 FASE 07: TOPO DA ESCADA
-**Status:** `⏳ Aguardando`
-**Progresso:** 0/6 tarefas (0%)
-- Header, Hero, Virada de chave, Dores + Alívio
+**Status:** `✅ Completa` (aguardando revisão visual de Kleber)
+**Progresso:** 6/6 tarefas (100%)
+- [x] 07.1 `Header.tsx`: Server Component (sem JS no cliente), logo + "Diagnóstico gratuito", sem menu hambúrguer
+- [x] 07.2 `Hero.tsx`: grade técnica, H1 novo, CTA diagnóstico + "Ver o que construímos", microcopy, 3 indicadores, conversa do Agente (≥768px)
+- [x] 07.3 `Virada.tsx` (novo): "O problema não é" riscado × "O problema sempre foi" em destaque
+- [x] 07.4 `Dores.tsx` (novo): 6 dores + 3 alívios
+- [x] 07.5 `Problema.tsx` removido; `page.tsx` atualizado
+- [x] 07.6 lint ✅ · tsc ✅ · build ✅ · 375px sem rolagem horizontal ✅ · 768px ✅ · 1536px ✅
 
 ### 🔵 FASE 08: CORAÇÃO
 **Status:** `⏳ Aguardando`
