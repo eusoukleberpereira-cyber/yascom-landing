@@ -2,7 +2,7 @@
 
 **Descrição:** Landing page de alta conversão para YASCOM INTELIGÊNCIA DIGITAL LTDA, apresentando soluções de Agentes de IA e CRM personalizados. Objetivo único: gerar contato via WhatsApp.
 **Stack:** Next.js 16.2.7 (Turbopack) + React 19 + Tailwind CSS 4 + Vercel + GitHub
-**Última atualização:** 2026-11-13
+**Última atualização:** 2026-11-18 (planejamento da v2)
 
 > Status das Fases 01–04 reconstruído em 2026-11-13 a partir do `git log`, das tags de backup e do código atual (o arquivo não tinha sido atualizado durante a execução).
 
@@ -78,6 +78,37 @@
 
 ---
 
+# 🟠 LANDING v2 — "Sala de Controle"
+
+> Spec: `docs/memoria/projeto.md` v2.0 · Plano detalhado: `docs/memoria/plano-tarefas-v2.md` · Decisões: `docs/decisions/ADR-001-landing-v2-estilo-e-conteudo.md`
+
+### 🔵 FASE 06: FUNDAÇÃO v2
+**Status:** `⏳ Aguardando`
+**Progresso:** 0/9 tarefas (0%)
+- Tokens escuros no Tailwind (`@theme`), JetBrains Mono, botões/cards v2, mensagens WhatsApp do diagnóstico, `src/content/landing.ts`, componentes base, SEO v2
+
+### 🔵 FASE 07: TOPO DA ESCADA
+**Status:** `⏳ Aguardando`
+**Progresso:** 0/6 tarefas (0%)
+- Header, Hero, Virada de chave, Dores + Alívio
+
+### 🔵 FASE 08: CORAÇÃO
+**Status:** `⏳ Aguardando`
+**Progresso:** 0/5 tarefas (0%)
+- 6 Pilares, Catálogo (7 soluções + ecossistema), Como funciona (4 etapas), Por que YASCOM
+
+### 🔵 FASE 09: FECHAMENTO
+**Status:** `⏳ Aguardando`
+**Progresso:** 0/6 tarefas (0%)
+- Oferta Diagnóstico Gratuito, FAQ, Fechamento, Footer, WhatsApp flutuante (mobile)
+
+### 🔵 FASE 10: PRODUÇÃO v2
+**Status:** `⏳ Aguardando`
+**Progresso:** 0/6 tarefas (0%)
+- OG image escura, Lighthouse, Ravena, Kerberos, merge `hml` → `main`
+
+---
+
 ## Backups e Segurança
 
 | Data | Tag | Tipo | Status |
@@ -95,3 +126,5 @@
 | 2026-11-13 | Shiva: spec da seção de clientes + 10 logos. Hades: Fase 05 planejada |
 | 2026-11-13 | Atlas: seção Clientes implementada e enviada para `dev` (e569c43) |
 | 2026-11-13 | Seção Clientes revertida a pedido de Kleber — site volta ao estado anterior |
+| 2026-11-18 | Shiva: spec v2.0 (tema escuro "Sala de Controle", 6 pilares, catálogo com 7 soluções, diagnóstico gratuito), MoSCoW v2 aprovado |
+| 2026-11-18 | Hades: ADR-001, plano das Fases 06–10 e copy deck completo em `plano-tarefas-v2.md` |

@@ -1,38 +1,43 @@
-# Priorização MoSCoW — YASCOM Landing Page
-**Data:** 2026-06-03
+# Priorização MoSCoW — YASCOM Landing Page v2
+**Data:** 2026-11-18 (v1 em 2026-06-03)
+**Status:** ✅ APROVADO por Kleber em 2026-11-18
 
 ---
 
-## 📦 MUST HAVE (Primeira Versão)
+## 📦 MUST HAVE (Primeira Versão da v2)
 
-- [x] Header fixo com logo e botão WhatsApp
-- [x] Hero — headline de impacto + CTA principal
-- [x] Seção Problema — dores do cliente antes da YASCOM
-- [x] Seção Soluções — 3 cards (Agente IA / CRM / Completo)
-- [x] Seção Como Funciona — processo em 3 passos
-- [x] Seção Por que YASCOM — diferenciais da marca
-- [x] CTA Final — encerramento + botão WhatsApp
-- [x] Footer — logo, CNPJ, redes sociais
-
----
+- [ ] Tema escuro "Sala de Controle" aplicado no site inteiro
+- [ ] Header fixo com botão "Diagnóstico gratuito"
+- [ ] Hero novo (promessa + CTA + microcopy sem compromisso)
+- [ ] Virada de chave ("O problema não é… / O problema sempre foi…")
+- [ ] Dores + Alívio ("Quando vira sistema, você…")
+- [ ] Os 6 Pilares (cards com o texto definido por Kleber)
+- [ ] O que a YASCOM constrói (catálogo com as 7 soluções)
+- [ ] Como funciona em 4 etapas
+- [ ] Por que YASCOM (ajustado)
+- [ ] Oferta: Diagnóstico Gratuito ("o que você recebe" + zero risco)
+- [ ] Perguntas frequentes (subiu do Should da v1)
+- [ ] Fechamento com decisão binária + CTA
+- [ ] Footer no tema escuro
+- [ ] Botão flutuante de WhatsApp no celular
+- [ ] Mensagem pré-preenchida do WhatsApp citando o diagnóstico
 
 ## 📦 SHOULD HAVE (Logo Depois)
 
-- [ ] Seção Segmentos — mercados atendidos com ícones
-- [ ] Seção FAQ — perguntas frequentes
-
----
+- [ ] Animações de entrada no scroll (respeitando reduced-motion)
+- [ ] Destaque visual do ecossistema Tráfego → Agente de I.A. → CRM (diagrama animado)
+- [ ] Seção Segmentos (mercados atendidos)
+- [ ] Domínio próprio yascom.com.br apontando para o site
 
 ## 📦 COULD HAVE (Se Der Tempo)
 
-- [ ] Animações de entrada nas seções (scroll reveal)
-- [ ] Chatbot de pré-atendimento na própria landing
-- [ ] Blog / artigos sobre IA e CRM
-
----
+- [ ] Demonstração simulada de conversa com Agente de I.A. no hero
+- [ ] Medição de cliques nos botões (analytics de conversão)
 
 ## 📦 WON'T HAVE (Futuro)
 
-- [ ] Área de cliente / login
+- [ ] Depoimentos (entram quando houver depoimentos reais; espaço já previsto)
 - [ ] Calculadora de ROI interativa
-- [ ] Integração com formulário de CRM próprio
+- [ ] Chatbot de pré-atendimento na própria página
+- [ ] Blog / artigos
+- [ ] Área de cliente / login
