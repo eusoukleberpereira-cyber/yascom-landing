@@ -155,6 +155,8 @@
 | 2026-11-18 | `backup-pre-prod-20261118-145728` | Pré-produção (headline, painel, dobra) | ✅ |
 | 2026-11-18 | `backup-pre-hml-20261118-165533` | Pré-HML (fundador + logos) | ✅ |
 | 2026-11-18 | `backup-pre-prod-20261118-165556` | Pré-produção (fundador + logos) | ✅ |
+| 2026-11-18 | `backup-pre-hml-20261118-180820` | Pré-HML (remove CTA final + botão reunião) | ✅ |
+| 2026-11-18 | `backup-pre-prod-20261118-180838` | Pré-produção (remove CTA final + botão reunião) | ✅ |
 
 ## Histórico de Sessões
 
@@ -178,4 +180,5 @@
 | 2026-11-18 | Publicado em produção (`main` 02f5820) a pedido de Kleber ("pode publicar"); Ravena e Kerberos não executados; Atlas verificou build, lint, secrets, dobra e site no ar |
 | 2026-11-18 | Bloco do fundador (`Fundador.tsx`, foto `src/assets/kleber-fundador.jpg`, "Kleber Pereira") ao fim de Por que a YASCOM; faixa `Clientes.tsx` com 10 logos (grade estática, cinza → cor no hover) entre Hero e Problema. Bastidores Elegance sem logo (só foto de pessoa no Instagram); Morais & Morais fora da lista nova |
 | 2026-11-18 | Publicado em produção (`main` b8f10a2) a pedido de Kleber; Ravena e Kerberos não executados; Atlas verificou build, textos e imagens no ar (foto do fundador servida em WebP, ~26 KB) |
+| 2026-11-18 | Seção final 'Pronto para transformar seu atendimento?' (`CTAFinal.tsx`) removida a pedido de Kleber; botão 'Marcar Reunião Estratégica' (WhatsApp) abaixo da assinatura do fundador. Publicado (`main` 3de7bac) |
 | 2026-11-18 | Shiva: recomendações pendentes de material de Kleber: caso real de cliente, foto do fundador, oferta "diagnóstico gratuito", FAQ, segmentos, integrações, política de privacidade, medição de cliques, domínio yascom.com.br, WhatsApp flutuante |
