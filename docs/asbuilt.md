@@ -157,6 +157,8 @@
 | 2026-11-18 | `backup-pre-prod-20261118-165556` | Pré-produção (fundador + logos) | ✅ |
 | 2026-11-18 | `backup-pre-hml-20261118-180820` | Pré-HML (remove CTA final + botão reunião) | ✅ |
 | 2026-11-18 | `backup-pre-prod-20261118-180838` | Pré-produção (remove CTA final + botão reunião) | ✅ |
+| 2026-11-18 | `backup-pre-hml-20261118-225519` | Pré-homologação (domínio yascom.com.br) | ✅ |
+| 2026-11-18 | `backup-pre-prod-20261118-225519` | Pré-produção (domínio yascom.com.br) | ✅ |
 
 ## Histórico de Sessões
 
@@ -182,3 +184,4 @@
 | 2026-11-18 | Publicado em produção (`main` b8f10a2) a pedido de Kleber; Ravena e Kerberos não executados; Atlas verificou build, textos e imagens no ar (foto do fundador servida em WebP, ~26 KB) |
 | 2026-11-18 | Seção final 'Pronto para transformar seu atendimento?' (`CTAFinal.tsx`) removida a pedido de Kleber; botão 'Marcar Reunião Estratégica' (WhatsApp) abaixo da assinatura do fundador. Publicado (`main` 3de7bac) |
 | 2026-11-18 | Shiva: recomendações pendentes de material de Kleber: caso real de cliente, foto do fundador, oferta "diagnóstico gratuito", FAQ, segmentos, integrações, política de privacidade, medição de cliques, domínio yascom.com.br, WhatsApp flutuante |
+| 2026-11-18 | Domínio yascom.com.br (Registro.br, modo avançado: A @ 216.198.79.1 / 64.29.17.1, CNAME www → Vercel) ligado ao projeto; certificado Let's Encrypt emitido via `vercel certs issue` (até 17/02/2027, renovação automática). `metadataBase`, canonical e og:url → https://yascom.com.br. Publicado (`main` bb82b89) |
