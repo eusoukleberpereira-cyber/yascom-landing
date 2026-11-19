@@ -19,7 +19,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yascom-landing.vercel.app"),
+  metadataBase: new URL("https://yascom.com.br"),
+  alternates: { canonical: "/" },
   title: "YASCOM | Agentes de IA e CRM para Empresas",
   description:
     "Soluções de Inteligência Artificial e CRM personalizados para transformar o atendimento da sua empresa. Fale com a YASCOM e descubra qual solução faz sentido para o seu negócio.",
@@ -39,6 +40,7 @@ export const metadata: Metadata = {
     title: "YASCOM | Agentes de IA e CRM para Empresas",
     description:
       "Agentes de IA e CRM sob medida para empresas que não aceitam perder clientes por falha no atendimento.",
+    url: "/",
     siteName: "YASCOM",
     locale: "pt_BR",
     type: "website",
