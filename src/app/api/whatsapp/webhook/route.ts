@@ -32,6 +32,8 @@ export async function POST(request: NextRequest) {
       const filtro = filtrarMensagem(payload, {
         tokenInstancia: config.uazapiToken,
         kleberWhatsapp: config.kleberWhatsapp,
+        // Só para testes: deixa o Kleber falar com a IA do número pessoal.
+        permitirKleber: process.env.AGENTE_PERMITIR_KLEBER === "1",
       });
       if (!filtro.atender) {
         console.info(`[agente] ignorada: ${filtro.motivo}`);

@@ -20,7 +20,7 @@ export type ResultadoFiltro =
  */
 export function filtrarMensagem(
   payload: WebhookUazapi,
-  opcoes: { tokenInstancia: string; kleberWhatsapp: string },
+  opcoes: { tokenInstancia: string; kleberWhatsapp: string; permitirKleber?: boolean },
 ): ResultadoFiltro {
   if (payload.EventType !== "messages") return { atender: false, motivo: "evento" };
   if (payload.token && payload.token !== opcoes.tokenInstancia) {
@@ -39,7 +39,9 @@ export function filtrarMensagem(
   const telefone =
     telefoneDoJid(m.chatid) ?? telefoneDoJid(m.sender_pn) ?? telefoneDoJid(m.sender);
   if (!telefone) return { atender: false, motivo: "sem_telefone" };
-  if (telefone === opcoes.kleberWhatsapp) return { atender: false, motivo: "kleber" };
+  if (telefone === opcoes.kleberWhatsapp && !opcoes.permitirKleber) {
+    return { atender: false, motivo: "kleber" };
+  }
 
   const whatsappId = m.messageid ?? m.id;
   if (!whatsappId) return { atender: false, motivo: "sem_id" };
