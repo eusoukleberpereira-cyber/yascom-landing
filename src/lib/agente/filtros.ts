@@ -1,5 +1,5 @@
 import "server-only";
-import { telefoneDoJid, type WebhookUazapi } from "./uazapi";
+import { telefoneComparavel, telefoneDoJid, type WebhookUazapi } from "./uazapi";
 
 export type MensagemRecebida = {
   whatsappId: string;
@@ -39,7 +39,9 @@ export function filtrarMensagem(
   const telefone =
     telefoneDoJid(m.chatid) ?? telefoneDoJid(m.sender_pn) ?? telefoneDoJid(m.sender);
   if (!telefone) return { atender: false, motivo: "sem_telefone" };
-  if (telefone === opcoes.kleberWhatsapp && !opcoes.permitirKleber) {
+  const ehKleber =
+    telefoneComparavel(telefone) === telefoneComparavel(opcoes.kleberWhatsapp);
+  if (ehKleber && !opcoes.permitirKleber) {
     return { atender: false, motivo: "kleber" };
   }
 
