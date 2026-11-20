@@ -186,3 +186,4 @@
 | 2026-11-18 | Shiva: recomendações pendentes de material de Kleber: caso real de cliente, foto do fundador, oferta "diagnóstico gratuito", FAQ, segmentos, integrações, política de privacidade, medição de cliques, domínio yascom.com.br, WhatsApp flutuante |
 | 2026-11-18 | Domínio yascom.com.br (Registro.br, modo avançado: A @ 216.198.79.1 / 64.29.17.1, CNAME www → Vercel) ligado ao projeto; certificado Let's Encrypt emitido via `vercel certs issue` (até 17/02/2027, renovação automática). `metadataBase`, canonical e og:url → https://yascom.com.br. Publicado (`main` bb82b89) |
 | 2026-11-20 | Todos os botões de WhatsApp do site (`src/lib/whatsapp.ts`) → 41 98504-6918, número do agente de IA de pré-atendimento (conectado via UAZAPI). Antes: 41 99911-2899 (Kleber). Credenciais UAZAPI no vault e em `.env.local` (fora do git) |
+| 2026-11-20 | Mensagens prontas dos botões de WhatsApp: "Olá Kleber!" → "Olá, YASCOM!" (quem recebe agora é a IA) |
