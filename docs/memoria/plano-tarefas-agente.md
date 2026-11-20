@@ -33,7 +33,7 @@ São estimativas: o valor real aparece no painel da Anthropic depois da primeira
 - [~] 11.2 Variáveis: `.env.local` feito; Vercel (Production e Preview) fica para a Fase 14: `ANTHROPIC_API_KEY`, `GROQ_API_KEY`, `UAZAPI_SERVER_URL`, `UAZAPI_INSTANCE_TOKEN`, `KLEBER_WHATSAPP=5541999112899`, `WHATSAPP_WEBHOOK_SECRET` (gerar aleatório), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Tudo do vault; o que faltar, salvar no vault
 - [x] 11.3 Rota `src/app/api/whatsapp/webhook/route.ts`: confere o segredo, responde 200 e processa com `after()`. Ler antes `node_modules/next/dist/docs/01-app/` (rotas e `after`)
 - [x] 11.4 Filtros: grupos, status, `fromMe`, número do Kleber. Id da mensagem único (sem duplicar)
-- [ ] 11.5 Ler a documentação da UAZAPI (formato do webhook, envio de texto, download de mídia) e registrar o formato real recebido num arquivo de exemplo em `docs/`
+- [x] 11.5 Ler a documentação da UAZAPI (formato do webhook, envio de texto, download de mídia) e registrar o formato real recebido num arquivo de exemplo em `docs/`
 
 **Critério de aceitação:** `npm run build` e `npm run lint` sem erro; mensagem de teste gravada uma única vez; mensagem do número do Kleber ignorada; chamada sem segredo recebe 401.
 
@@ -41,20 +41,20 @@ São estimativas: o valor real aparece no painel da Anthropic depois da primeira
 **Objetivo:** a IA conversa, descobre o básico e encaminha.
 **Testável:** conversa completa de um celular de teste até a despedida.
 
-- [ ] 12.1 Instalar `@anthropic-ai/sdk`. Modelo: `claude-haiku-5-5` (aprovado). Haiku não tem fallback automático em recusa: tratar `stop_reason: "refusal"` com mensagem fixa. `thinking` adaptativo (padrão), `output_config.effort: "low"`, cache no `system`, `max_tokens` ~1024
-- [ ] 12.2 Texto fixo da IA (`src/lib/agente/prompt.ts`): persona (assistente virtual do Kleber, diz que é IA, se usa como vitrine), os 6 serviços (de `Solucoes.tsx`), as 8 mensagens prontas e o interesse de cada uma (`src/lib/whatsapp.ts`), regras (sem preço, sem prazo, nunca diz que é humana, respostas curtas de WhatsApp, tom de voz de `projeto.md`)
-- [ ] 12.3 Ferramentas `encaminhar_para_kleber` e `marcar_nao_cliente` com `strict: true`; `tool_choice: auto` (o modelo não aceita forçar ferramenta)
-- [ ] 12.4 Envio da resposta pela UAZAPI. Juntar mensagens picadas (~8 s)
-- [ ] 12.5 Tratar `stop_reason` (`refusal`, `max_tokens`) e falhas da API: o cliente nunca fica sem resposta; em último caso, mensagem fixa "já te respondo em instantes" e aviso ao Kleber
-- [ ] 12.6 Depois de encaminhada, a IA continua educada se o cliente escrever, mas **não avisa o Kleber de novo**
+- [x] 12.1 Instalar `@anthropic-ai/sdk`. Modelo: `claude-haiku-5-5` (aprovado). Haiku não tem fallback automático em recusa: tratar `stop_reason: "refusal"` com mensagem fixa. `thinking` adaptativo (padrão), `output_config.effort: "low"`, cache no `system`, `max_tokens` ~1024
+- [x] 12.2 Texto fixo da IA (`src/lib/agente/prompt.ts`): persona (assistente virtual do Kleber, diz que é IA, se usa como vitrine), os 6 serviços (de `Solucoes.tsx`), as 8 mensagens prontas e o interesse de cada uma (`src/lib/whatsapp.ts`), regras (sem preço, sem prazo, nunca diz que é humana, respostas curtas de WhatsApp, tom de voz de `projeto.md`)
+- [x] 12.3 Ferramentas `encaminhar_para_kleber` e `marcar_nao_cliente` com `strict: true`; `tool_choice: auto` (o modelo não aceita forçar ferramenta)
+- [x] 12.4 Envio da resposta pela UAZAPI. Juntar mensagens picadas (~8 s)
+- [x] 12.5 Tratar `stop_reason` (`refusal`, `max_tokens`) e falhas da API: o cliente nunca fica sem resposta; em último caso, mensagem fixa "já te respondo em instantes" e aviso ao Kleber
+- [x] 12.6 Depois de encaminhada, a IA continua educada se o cliente escrever, mas **não avisa o Kleber de novo**
 
 **Critério de aceitação:** 5 conversas de teste (cliente decidido, cliente vago, "Reunião Estratégica", candidato a emprego, pergunta de preço) com o comportamento da spec.
 
 ### 🔵 FASE 13: ÁUDIO E AVISO
 **Objetivo:** fechar os Must Haves.
-- [ ] 13.1 Áudio: baixar pela UAZAPI → transcrever no Groq → entrar na conversa como texto. Falha na transcrição: pedir com gentileza para escrever
-- [ ] 13.2 Aviso para o Kleber (41 99911-2899) no formato da spec, com o link `wa.me` do cliente para ele chamar com um toque
-- [ ] 13.3 Mensagem de despedida para o cliente
+- [x] 13.1 Áudio: baixar pela UAZAPI → transcrever no Groq → entrar na conversa como texto. Falha na transcrição: pedir com gentileza para escrever
+- [x] 13.2 Aviso para o Kleber (41 99911-2899) no formato da spec, com o link `wa.me` do cliente para ele chamar com um toque
+- [x] 13.3 Mensagem de despedida para o cliente
 
 **Critério de aceitação:** áudio de teste entendido; aviso chegando no celular do Kleber; cliente avisado.
 
