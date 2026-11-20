@@ -188,3 +188,4 @@
 | 2026-11-20 | Todos os botões de WhatsApp do site (`src/lib/whatsapp.ts`) → 41 98504-6918, número do agente de IA de pré-atendimento (conectado via UAZAPI). Antes: 41 99911-2899 (Kleber). Credenciais UAZAPI no vault e em `.env.local` (fora do git) |
 | 2026-11-20 | Mensagens prontas dos botões de WhatsApp: "Olá Kleber!" → "Olá, YASCOM!" (quem recebe agora é a IA) |
 | 2026-11-20 | Mensagens prontas voltam a começar com "Olá Kleber!" a pedido de Kleber; a IA se apresenta como assistente dele. Número 41 98504-6918 mantido |
+| 2026-11-20 | Shiva: spec do agente de IA de pré-atendimento (`agente-pre-atendimento.md`, `moscow-agente.md`). Hades: ADR-002 (rota de API no próprio Next.js + Supabase + Claude + Groq para áudio) e plano das Fases 11–14 em `plano-tarefas-agente.md`. Aguardando aprovação do modelo e do custo |
