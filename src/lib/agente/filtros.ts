@@ -1,6 +1,9 @@
 import "server-only";
 import { telefoneComparavel, telefoneDoJid, type WebhookUazapi } from "./uazapi";
 
+/** Corta textos gigantes (o WhatsApp aceita até ~65 mil caracteres). */
+const LIMITE_TEXTO = 1500;
+
 export type MensagemRecebida = {
   whatsappId: string;
   telefone: string;
@@ -23,9 +26,9 @@ export function filtrarMensagem(
   opcoes: { tokenInstancia: string; kleberWhatsapp: string; permitirKleber?: boolean },
 ): ResultadoFiltro {
   if (payload.EventType !== "messages") return { atender: false, motivo: "evento" };
-  if (payload.token && payload.token !== opcoes.tokenInstancia) {
-    return { atender: false, motivo: "instancia" };
-  }
+  // Segunda trava além do segredo da URL: o webhook da UAZAPI traz o token
+  // da instância. Sem ele, é chamada forjada (ex.: URL vazada).
+  if (payload.token !== opcoes.tokenInstancia) return { atender: false, motivo: "instancia" };
 
   const m = payload.message;
   if (!m) return { atender: false, motivo: "sem_mensagem" };
@@ -54,7 +57,7 @@ export function filtrarMensagem(
       whatsappId,
       telefone,
       nomeWhatsapp: m.senderName?.trim() || null,
-      texto: m.text?.trim() ?? "",
+      texto: (m.text?.trim() ?? "").slice(0, LIMITE_TEXTO),
       tipo: m.messageType ?? "desconhecido",
     },
   };

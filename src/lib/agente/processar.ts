@@ -8,12 +8,16 @@ import {
   listarMensagens,
   marcarEncaminhada,
   obterConversa,
+  respostasNasUltimas24h,
   ultimaMensagemCliente,
   type Conversa,
 } from "./db";
 import type { MensagemRecebida } from "./filtros";
 import { RespostaIndisponivel, responder, type Encaminhamento } from "./ia";
 import { enviarTexto, mostrarDigitando } from "./uazapi";
+
+/** Máximo de respostas da IA por número em 24 h (protege contra enxurrada). */
+const LIMITE_RESPOSTAS_24H = 30;
 
 /** Tempo de espera para juntar mensagens picadas ("oi" / "tudo bem?" / ...). */
 const ESPERA_MS = 8000;
@@ -52,7 +56,27 @@ async function textoDaMensagem(m: MensagemRecebida): Promise<{ texto: string; ti
   return { texto: `[o cliente enviou ${midia}]`, tipo: m.tipo };
 }
 
-function avisoParaKleber(c: Conversa, d: Encaminhamento): string {
+/**
+ * Os campos do aviso vêm da conversa com um desconhecido: tira links e
+ * quebras de linha e limita o tamanho, para ninguém usar o aviso como golpe.
+ */
+function limpar(campo: string): string {
+  return campo
+    .replace(/(https?:\/\/|www\.)\S+/gi, "[link removido]")
+    .replace(/\b[a-z0-9-]+\.(xyz|com|net|org|br|io|app|link|info|site|online|top)(\/\S*)?\b/gi, "[link removido]")
+    .replace(/[*_~`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 160);
+}
+
+function avisoParaKleber(c: Conversa, dados: Encaminhamento): string {
+  const d = {
+    nome: limpar(dados.nome),
+    empresa: limpar(dados.empresa),
+    interesse: limpar(dados.interesse),
+    necessidade: limpar(dados.necessidade),
+  };
   return [
     "🔔 *Novo cliente pelo site*",
     "",
@@ -92,6 +116,11 @@ export async function processarMensagem(m: MensagemRecebida): Promise<void> {
   await esperar(ESPERA_MS);
   if ((await ultimaMensagemCliente(conversa.id)) !== m.whatsappId) {
     console.info(`[agente] aguardando mais mensagens: conversa ${conversa.id}`);
+    return;
+  }
+
+  if ((await respostasNasUltimas24h(conversa.id)) >= LIMITE_RESPOSTAS_24H) {
+    console.warn(`[agente] limite diário atingido: conversa ${conversa.id}`);
     return;
   }
 

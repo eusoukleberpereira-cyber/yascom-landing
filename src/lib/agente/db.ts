@@ -129,3 +129,16 @@ export async function marcarEncaminhada(
   if (error) throw new Error(`Supabase (conversas): ${error.message}`);
   return (data?.length ?? 0) > 0;
 }
+
+/** Quantas respostas a IA já deu nesta conversa nas últimas 24 horas. */
+export async function respostasNasUltimas24h(conversaId: string): Promise<number> {
+  const desde = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+  const { count, error } = await db()
+    .from("mensagens")
+    .select("id", { count: "exact", head: true })
+    .eq("conversa_id", conversaId)
+    .eq("papel", "ia")
+    .gte("criada_em", desde);
+  if (error) throw new Error(`Supabase (mensagens): ${error.message}`);
+  return count ?? 0;
+}
