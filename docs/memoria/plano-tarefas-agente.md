@@ -29,10 +29,10 @@ São estimativas: o valor real aparece no painel da Anthropic depois da primeira
 **Objetivo:** a mensagem do cliente chega, é filtrada e guardada. A IA ainda não responde.
 **Testável:** mandar "oi" para o 41 98504-6918 e ver a linha aparecer no Supabase.
 
-- [ ] 11.1 Supabase: usar o projeto `supabase_project_ref` do vault se ele for da YASCOM e estiver livre; senão criar um novo no plano gratuito (confirmar com o Kleber se for criar). Criar `conversas` e `mensagens` (ADR-002 §2) com RLS ligado e sem políticas públicas
-- [ ] 11.2 Variáveis: `.env.local` + Vercel (Production e Preview): `ANTHROPIC_API_KEY`, `GROQ_API_KEY`, `UAZAPI_SERVER_URL`, `UAZAPI_INSTANCE_TOKEN`, `KLEBER_WHATSAPP=5541999112899`, `WHATSAPP_WEBHOOK_SECRET` (gerar aleatório), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Tudo do vault; o que faltar, salvar no vault
-- [ ] 11.3 Rota `src/app/api/whatsapp/webhook/route.ts`: confere o segredo, responde 200 e processa com `after()`. Ler antes `node_modules/next/dist/docs/01-app/` (rotas e `after`)
-- [ ] 11.4 Filtros: grupos, status, `fromMe`, número do Kleber. Id da mensagem único (sem duplicar)
+- [x] 11.1 Supabase: usar o projeto `supabase_project_ref` do vault se ele for da YASCOM e estiver livre; senão criar um novo no plano gratuito (confirmar com o Kleber se for criar). Criar `conversas` e `mensagens` (ADR-002 §2) com RLS ligado e sem políticas públicas
+- [~] 11.2 Variáveis: `.env.local` feito; Vercel (Production e Preview) fica para a Fase 14: `ANTHROPIC_API_KEY`, `GROQ_API_KEY`, `UAZAPI_SERVER_URL`, `UAZAPI_INSTANCE_TOKEN`, `KLEBER_WHATSAPP=5541999112899`, `WHATSAPP_WEBHOOK_SECRET` (gerar aleatório), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Tudo do vault; o que faltar, salvar no vault
+- [x] 11.3 Rota `src/app/api/whatsapp/webhook/route.ts`: confere o segredo, responde 200 e processa com `after()`. Ler antes `node_modules/next/dist/docs/01-app/` (rotas e `after`)
+- [x] 11.4 Filtros: grupos, status, `fromMe`, número do Kleber. Id da mensagem único (sem duplicar)
 - [ ] 11.5 Ler a documentação da UAZAPI (formato do webhook, envio de texto, download de mídia) e registrar o formato real recebido num arquivo de exemplo em `docs/`
 
 **Critério de aceitação:** `npm run build` e `npm run lint` sem erro; mensagem de teste gravada uma única vez; mensagem do número do Kleber ignorada; chamada sem segredo recebe 401.
