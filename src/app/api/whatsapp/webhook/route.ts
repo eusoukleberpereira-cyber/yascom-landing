@@ -1,8 +1,8 @@
 import { timingSafeEqual } from "node:crypto";
 import { after, type NextRequest } from "next/server";
 import { config } from "@/lib/agente/config";
-import { gravarMensagemCliente, obterConversa } from "@/lib/agente/db";
 import { filtrarMensagem } from "@/lib/agente/filtros";
+import { processarMensagem } from "@/lib/agente/processar";
 import type { WebhookUazapi } from "@/lib/agente/uazapi";
 
 export const maxDuration = 60;
@@ -39,18 +39,7 @@ export async function POST(request: NextRequest) {
         console.info(`[agente] ignorada: ${filtro.motivo}`);
         return;
       }
-      const { mensagem } = filtro;
-      const conversa = await obterConversa(mensagem.telefone, mensagem.nomeWhatsapp);
-      const nova = await gravarMensagemCliente({
-        conversaId: conversa.id,
-        texto: mensagem.texto,
-        tipo: mensagem.tipo,
-        whatsappId: mensagem.whatsappId,
-      });
-      console.info(
-        `[agente] ${nova ? "gravada" : "repetida"}: conversa ${conversa.id}, tipo ${mensagem.tipo}`,
-      );
-      // Fase 12: chamar a IA e responder.
+      await processarMensagem(filtro.mensagem);
     } catch (erro) {
       console.error("[agente] erro ao processar mensagem", erro);
     }

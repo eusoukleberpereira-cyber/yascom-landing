@@ -68,3 +68,64 @@ export async function gravarMensagemCliente(params: {
   if (error.code === "23505") return false; // whatsapp_id repetido
   throw new Error(`Supabase (mensagens): ${error.message}`);
 }
+
+export type Mensagem = { papel: "cliente" | "ia"; texto: string; whatsapp_id: string | null };
+
+/** Histórico da conversa, do mais antigo para o mais novo (últimas 40). */
+export async function listarMensagens(conversaId: string): Promise<Mensagem[]> {
+  const { data, error } = await db()
+    .from("mensagens")
+    .select("papel, texto, whatsapp_id")
+    .eq("conversa_id", conversaId)
+    .order("criada_em", { ascending: false })
+    .limit(40);
+  if (error) throw new Error(`Supabase (mensagens): ${error.message}`);
+  return (data as Mensagem[]).reverse();
+}
+
+/** whatsapp_id da última mensagem do cliente (para juntar mensagens picadas). */
+export async function ultimaMensagemCliente(conversaId: string): Promise<string | null> {
+  const { data, error } = await db()
+    .from("mensagens")
+    .select("whatsapp_id")
+    .eq("conversa_id", conversaId)
+    .eq("papel", "cliente")
+    .order("criada_em", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error) throw new Error(`Supabase (mensagens): ${error.message}`);
+  return (data?.whatsapp_id as string | undefined) ?? null;
+}
+
+export async function gravarMensagemIA(conversaId: string, texto: string): Promise<void> {
+  const { error } = await db()
+    .from("mensagens")
+    .insert({ conversa_id: conversaId, papel: "ia", texto, tipo: "texto" });
+  if (error) throw new Error(`Supabase (mensagens): ${error.message}`);
+}
+
+export async function atualizarConversa(
+  conversaId: string,
+  campos: Partial<Omit<Conversa, "id" | "telefone">>,
+): Promise<void> {
+  const { error } = await db().from("conversas").update(campos).eq("id", conversaId);
+  if (error) throw new Error(`Supabase (conversas): ${error.message}`);
+}
+
+/**
+ * Marca a conversa como encaminhada só se ainda não estava. Retorna true
+ * para quem conseguiu marcar (evita mandar dois avisos ao Kleber).
+ */
+export async function marcarEncaminhada(
+  conversaId: string,
+  campos: { nome: string; empresa: string; necessidade: string; interesse: string },
+): Promise<boolean> {
+  const { data, error } = await db()
+    .from("conversas")
+    .update({ ...campos, status: "encaminhada", encaminhada_em: new Date().toISOString() })
+    .eq("id", conversaId)
+    .neq("status", "encaminhada")
+    .select("id");
+  if (error) throw new Error(`Supabase (conversas): ${error.message}`);
+  return (data?.length ?? 0) > 0;
+}
