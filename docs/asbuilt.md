@@ -187,3 +187,4 @@
 | 2026-11-18 | Domínio yascom.com.br (Registro.br, modo avançado: A @ 216.198.79.1 / 64.29.17.1, CNAME www → Vercel) ligado ao projeto; certificado Let's Encrypt emitido via `vercel certs issue` (até 17/02/2027, renovação automática). `metadataBase`, canonical e og:url → https://yascom.com.br. Publicado (`main` bb82b89) |
 | 2026-11-20 | Todos os botões de WhatsApp do site (`src/lib/whatsapp.ts`) → 41 98504-6918, número do agente de IA de pré-atendimento (conectado via UAZAPI). Antes: 41 99911-2899 (Kleber). Credenciais UAZAPI no vault e em `.env.local` (fora do git) |
 | 2026-11-20 | Mensagens prontas dos botões de WhatsApp: "Olá Kleber!" → "Olá, YASCOM!" (quem recebe agora é a IA) |
+| 2026-11-20 | Mensagens prontas voltam a começar com "Olá Kleber!" a pedido de Kleber; a IA se apresenta como assistente dele. Número 41 98504-6918 mantido |
