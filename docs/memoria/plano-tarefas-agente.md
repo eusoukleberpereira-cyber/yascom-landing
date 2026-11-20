@@ -59,6 +59,7 @@ São estimativas: o valor real aparece no painel da Anthropic depois da primeira
 **Critério de aceitação:** áudio de teste entendido; aviso chegando no celular do Kleber; cliente avisado.
 
 ### 🔵 FASE 14: PRODUÇÃO
+- [ ] 14.0 Travar de novo o número do Kleber: remover `AGENTE_PERMITIR_KLEBER` do `.env.local` (e nunca colocar na Vercel)
 - [ ] 14.1 Ravena: roteiro das 5 conversas + áudio + botões do site abrindo o número novo
 - [ ] 14.2 Kerberos: segredo do webhook, chaves fora do código e do git, RLS, tentativa de "enganar" a IA para falar preço ou sair do papel
 - [ ] 14.3 Backup (tag) → `dev` → `hml` → `main` com aprovação do Kleber
