@@ -30,7 +30,7 @@ São estimativas: o valor real aparece no painel da Anthropic depois da primeira
 **Testável:** mandar "oi" para o 41 98504-6918 e ver a linha aparecer no Supabase.
 
 - [x] 11.1 Supabase: usar o projeto `supabase_project_ref` do vault se ele for da YASCOM e estiver livre; senão criar um novo no plano gratuito (confirmar com o Kleber se for criar). Criar `conversas` e `mensagens` (ADR-002 §2) com RLS ligado e sem políticas públicas
-- [~] 11.2 Variáveis: `.env.local` feito; Vercel (Production e Preview) fica para a Fase 14: `ANTHROPIC_API_KEY`, `GROQ_API_KEY`, `UAZAPI_SERVER_URL`, `UAZAPI_INSTANCE_TOKEN`, `KLEBER_WHATSAPP=5541999112899`, `WHATSAPP_WEBHOOK_SECRET` (gerar aleatório), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Tudo do vault; o que faltar, salvar no vault
+- [x] 11.2 Variáveis: `.env.local` e Vercel (Production, marcadas como sensíveis): `ANTHROPIC_API_KEY`, `GROQ_API_KEY`, `UAZAPI_SERVER_URL`, `UAZAPI_INSTANCE_TOKEN`, `KLEBER_WHATSAPP=5541999112899`, `WHATSAPP_WEBHOOK_SECRET` (gerar aleatório), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Tudo do vault; o que faltar, salvar no vault
 - [x] 11.3 Rota `src/app/api/whatsapp/webhook/route.ts`: confere o segredo, responde 200 e processa com `after()`. Ler antes `node_modules/next/dist/docs/01-app/` (rotas e `after`)
 - [x] 11.4 Filtros: grupos, status, `fromMe`, número do Kleber. Id da mensagem único (sem duplicar)
 - [x] 11.5 Ler a documentação da UAZAPI (formato do webhook, envio de texto, download de mídia) e registrar o formato real recebido num arquivo de exemplo em `docs/`
@@ -59,7 +59,7 @@ São estimativas: o valor real aparece no painel da Anthropic depois da primeira
 **Critério de aceitação:** áudio de teste entendido; aviso chegando no celular do Kleber; cliente avisado.
 
 ### 🔵 FASE 14: PRODUÇÃO
-- [ ] 14.0 Travar de novo o número do Kleber: remover `AGENTE_PERMITIR_KLEBER` do `.env.local` (e nunca colocar na Vercel)
+- [x] 14.0 Travar de novo o número do Kleber: remover `AGENTE_PERMITIR_KLEBER` do `.env.local` (e nunca colocar na Vercel)
 - [ ] 14.1 Ravena: roteiro das 5 conversas + áudio + botões do site abrindo o número novo
 - [ ] 14.2 Kerberos: segredo do webhook, chaves fora do código e do git, RLS, tentativa de "enganar" a IA para falar preço ou sair do papel
 - [ ] 14.3 Backup (tag) → `dev` → `hml` → `main` com aprovação do Kleber
