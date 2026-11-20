@@ -1,7 +1,7 @@
 # Plano de Tarefas — Agente de IA de Pré-atendimento
 **Data:** 2026-11-20 · **Autor:** Hades
 **Base:** `agente-pre-atendimento.md`, `moscow-agente.md`, `ADR-002`
-**Status:** aguardando o "ok" do Kleber no modelo e no custo (seção Custos)
+**Status:** modelo aprovado por Kleber em 2026-11-20: **Haiku 5.5 (`claude-haiku-5-5`)**, ~R$ 0,02 por conversa
 
 ---
 
@@ -41,7 +41,7 @@ São estimativas: o valor real aparece no painel da Anthropic depois da primeira
 **Objetivo:** a IA conversa, descobre o básico e encaminha.
 **Testável:** conversa completa de um celular de teste até a despedida.
 
-- [ ] 12.1 Instalar `@anthropic-ai/sdk`. Modelo conforme aprovação do Kleber. `thinking` adaptativo (padrão), `output_config.effort: "low"`, cache no `system`, `max_tokens` ~1024
+- [ ] 12.1 Instalar `@anthropic-ai/sdk`. Modelo: `claude-haiku-5-5` (aprovado). Haiku não tem fallback automático em recusa: tratar `stop_reason: "refusal"` com mensagem fixa. `thinking` adaptativo (padrão), `output_config.effort: "low"`, cache no `system`, `max_tokens` ~1024
 - [ ] 12.2 Texto fixo da IA (`src/lib/agente/prompt.ts`): persona (assistente virtual do Kleber, diz que é IA, se usa como vitrine), os 6 serviços (de `Solucoes.tsx`), as 8 mensagens prontas e o interesse de cada uma (`src/lib/whatsapp.ts`), regras (sem preço, sem prazo, nunca diz que é humana, respostas curtas de WhatsApp, tom de voz de `projeto.md`)
 - [ ] 12.3 Ferramentas `encaminhar_para_kleber` e `marcar_nao_cliente` com `strict: true`; `tool_choice: auto` (o modelo não aceita forçar ferramenta)
 - [ ] 12.4 Envio da resposta pela UAZAPI. Juntar mensagens picadas (~8 s)

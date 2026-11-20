@@ -1,6 +1,6 @@
 # ADR-002 — Arquitetura do Agente de IA de Pré-atendimento
 
-**Status:** Proposto (aguardando aprovação do Kleber: modelo e custo)
+**Status:** Aceito (2026-11-20). Modelo: Claude Haiku 5.5 (`claude-haiku-5-5`), escolhido por Kleber
 **Data:** 2026-11-20
 **Autor:** Hades
 **Spec:** `docs/memoria/agente-pre-atendimento.md` · `docs/memoria/moscow-agente.md`
