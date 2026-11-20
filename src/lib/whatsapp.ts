@@ -1,4 +1,5 @@
-const BASE = "https://wa.me/5541999112899?text=";
+// Número do agente de IA de pré-atendimento (todos os contatos passam pela IA primeiro)
+const BASE = "https://wa.me/5541985046918?text=";
 
 const encode = (msg: string) => BASE + encodeURIComponent(msg);
 

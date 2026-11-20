@@ -157,6 +157,8 @@
 | 2026-11-18 | `backup-pre-prod-20261118-165556` | Pré-produção (fundador + logos) | ✅ |
 | 2026-11-18 | `backup-pre-hml-20261118-180820` | Pré-HML (remove CTA final + botão reunião) | ✅ |
 | 2026-11-18 | `backup-pre-prod-20261118-180838` | Pré-produção (remove CTA final + botão reunião) | ✅ |
+| 2026-11-18 | `backup-pre-hml-20261118-225519` | Pré-homologação (domínio yascom.com.br) | ✅ |
+| 2026-11-18 | `backup-pre-prod-20261118-225519` | Pré-produção (domínio yascom.com.br) | ✅ |
 
 ## Histórico de Sessões
 
@@ -182,3 +184,13 @@
 | 2026-11-18 | Publicado em produção (`main` b8f10a2) a pedido de Kleber; Ravena e Kerberos não executados; Atlas verificou build, textos e imagens no ar (foto do fundador servida em WebP, ~26 KB) |
 | 2026-11-18 | Seção final 'Pronto para transformar seu atendimento?' (`CTAFinal.tsx`) removida a pedido de Kleber; botão 'Marcar Reunião Estratégica' (WhatsApp) abaixo da assinatura do fundador. Publicado (`main` 3de7bac) |
 | 2026-11-18 | Shiva: recomendações pendentes de material de Kleber: caso real de cliente, foto do fundador, oferta "diagnóstico gratuito", FAQ, segmentos, integrações, política de privacidade, medição de cliques, domínio yascom.com.br, WhatsApp flutuante |
+| 2026-11-18 | Domínio yascom.com.br (Registro.br, modo avançado: A @ 216.198.79.1 / 64.29.17.1, CNAME www → Vercel) ligado ao projeto; certificado Let's Encrypt emitido via `vercel certs issue` (até 17/02/2027, renovação automática). `metadataBase`, canonical e og:url → https://yascom.com.br. Publicado (`main` bb82b89) |
+| 2026-11-20 | Todos os botões de WhatsApp do site (`src/lib/whatsapp.ts`) → 41 98504-6918, número do agente de IA de pré-atendimento (conectado via UAZAPI). Antes: 41 99911-2899 (Kleber). Credenciais UAZAPI no vault e em `.env.local` (fora do git) |
+| 2026-11-20 | Mensagens prontas dos botões de WhatsApp: "Olá Kleber!" → "Olá, YASCOM!" (quem recebe agora é a IA) |
+| 2026-11-20 | Mensagens prontas voltam a começar com "Olá Kleber!" a pedido de Kleber; a IA se apresenta como assistente dele. Número 41 98504-6918 mantido |
+| 2026-11-20 | Shiva: spec do agente de IA de pré-atendimento (`agente-pre-atendimento.md`, `moscow-agente.md`). Hades: ADR-002 (rota de API no próprio Next.js + Supabase + Claude + Groq para áudio) e plano das Fases 11–14 em `plano-tarefas-agente.md`. Aguardando aprovação do modelo e do custo |
+| 2026-11-20 | Atlas · Fase 11: número 41 98504-6918 reconectado na UAZAPI (QR escaneado por Kleber); Supabase `yascom-agente` (ref `yyirhncvkxtwutovenqb`, sa-east-1, grátis) com `conversas`/`mensagens` e RLS sem políticas públicas; rota `/api/whatsapp/webhook` (segredo, `after()`, filtros, sem duplicar). Webhook antigo (trip-crm-staging) substituído por um túnel de teste local. Testes simulados ok (401 sem segredo, gravação, repetida, número do Kleber ignorado) |
+| 2026-11-20 | Atlas · Fases 12 e 13 (código): Claude Haiku 5.5 com ferramentas `encaminhar_para_kleber`/`marcar_nao_cliente`, espera de 8 s para juntar mensagens, áudio (UAZAPI `AudioMessage` → `/message/download` MP3 → Groq `whisper-large-v3-turbo`), aviso ao Kleber com link wa.me, alerta ao Kleber se a IA falhar. Chave Anthropic antiga inválida, substituída no vault. 6 conversas simuladas ok. Achado: o WhatsApp entrega o número do Kleber sem o nono dígito (554199112899); trava corrigida. Aguardando teste real do Kleber |
+| 2026-11-20 | Kleber dispensou o teste manual. Atlas: envio real pela UAZAPI testado (mensagem de teste ao Kleber); trava do número do Kleber fechada de novo (`AGENTE_PERMITIR_KLEBER` removida) e conferida; 8 variáveis cadastradas na Vercel (Production, sensíveis); nenhum segredo no git; build ok. Aguardando "pode publicar" |
+| 2026-11-20 | Prompt ajustado a pedido de Kleber: despedida sem pergunta explícita; perguntas técnicas sobre a própria IA (API oficial, qual IA, dados) → "essa parte técnica o Kleber explica melhor". Testado |
+| 2026-11-20 | Kerberos (modo silencioso): segredos no git ✅, npm audit 0 ✅, cabeçalhos ✅, Supabase trancado (anon/publishable: 401 em leitura e escrita, sem policies, sem SECURITY DEFINER) ✅, 5 tentativas de enganar a IA (prompt, falso Kleber dando preço, aviso-golpe com link, palavrão, fora do escopo) resistidas ✅. Correções aplicadas: token da instância obrigatório no webhook (chamada forjada ignorada), limite de 30 respostas por número em 24 h, texto cortado em 1.500 caracteres, aviso ao Kleber sem links/formatação e com 160 caracteres por campo. APROVADO. Recomendado: teto de gastos no console da Anthropic |
