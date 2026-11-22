@@ -153,6 +153,9 @@
 - [x] Trava no `prompt.ts`: seção "Responda só com o que está neste texto" (sem completar com conhecimento de fora; perguntas sem resposta no texto → "o Kleber responde melhor"; fora do assunto não responde) + encaminhamento só com os dados que a pessoa disse
 - [x] Conferência única: as 21 pegadinhas da spec rodadas 1× contra a `responder()` real com ações falsas (sem WhatsApp, sem aviso, sem banco). 0 invenções, 0 preço/prazo, 0 promessa; encaminhamentos fiéis; controles (explicar o Agente de IA, atender saúde) respondidos
 - [x] Publicado a pedido de Kleber ("a"): backups `backup-pre-hml-20261122-1139` e `backup-pre-main-20261122-1139`, `main` 6b83dbc, deploy Vercel Ready; site 200, webhook 401 sem senha
+- [x] Tom profissional (Kleber não gostou do atendimento, opção "d"): "Olá! Sou a assistente virtual da YASCOM." só na 1ª mensagem; sem emoji, sem "pra", sem propaganda de si mesma; perguntas sem resposta no manual → "esse ponto é avaliado pelo Kleber no diagnóstico"; 1 parágrafo e 1 pergunta. 21 pegadinhas reconferidas: 0 invenções
+- [x] Sem "erro técnico" para o cliente (opção "a"): Haiku 5.5 tenta 2×, depois Sonnet 5.5 (reserva) 2×, prazo de 42 s, 12 s por chamada, SDK sem retentativas próprias. Se tudo falhar: "Recebemos sua mensagem. O Kleber entrará em contato em breve." + alerta ao Kleber (motivo cortado em 160 caracteres). Testado: normal 1,9 s; Haiku fora → reserva respondeu em 4,6 s; tudo fora → mensagem neutra em 4 s
+- [x] Publicado: backups `backup-pre-hml-20261122-1157` e `backup-pre-main-20261122-1157`, `main` f759242, deploy Vercel Ready; site 200, webhook 401 sem senha
 
 ---
 
