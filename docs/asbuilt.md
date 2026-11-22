@@ -148,11 +148,11 @@
 > Spec: `docs/memoria/trava-alucinacao.md` · Plano: `docs/memoria/plano-tarefas-trava.md`
 
 ### 🔵 FASE 15: TRAVA + BANCO DE PROVAS
-**Status:** `🔄 Em Andamento` (aguardando "pode publicar")
+**Status:** `✅ Completa` (publicada em 2026-11-22)
 **Escopo reduzido por Kleber (2026-11-22):** "Eu quero que o agente de IA responda o que está no prompt. Somente isso." Banco de provas automático e fiscal cancelados.
 - [x] Trava no `prompt.ts`: seção "Responda só com o que está neste texto" (sem completar com conhecimento de fora; perguntas sem resposta no texto → "o Kleber responde melhor"; fora do assunto não responde) + encaminhamento só com os dados que a pessoa disse
 - [x] Conferência única: as 21 pegadinhas da spec rodadas 1× contra a `responder()` real com ações falsas (sem WhatsApp, sem aviso, sem banco). 0 invenções, 0 preço/prazo, 0 promessa; encaminhamentos fiéis; controles (explicar o Agente de IA, atender saúde) respondidos
-- [ ] Publicação com aprovação do Kleber
+- [x] Publicado a pedido de Kleber ("a"): backups `backup-pre-hml-20261122-1139` e `backup-pre-main-20261122-1139`, `main` 6b83dbc, deploy Vercel Ready; site 200, webhook 401 sem senha
 
 ---
 

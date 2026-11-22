@@ -4,6 +4,21 @@ import { PROMPT_FIXO, contextoDaConversa, type ContextoConversa } from "./prompt
 import type { Mensagem } from "./db";
 
 const MODELO = "claude-haiku-5-5";
+/** Reserva: entra se o modelo principal falhar (fora do ar, lento, recusa, resposta vazia). */
+const MODELO_RESERVA = "claude-sonnet-5-5";
+
+/** Ordem das tentativas. A pausa é antes de cada tentativa. */
+const TENTATIVAS = [
+  { modelo: MODELO, pausaMs: 0 },
+  { modelo: MODELO, pausaMs: 1000 },
+  { modelo: MODELO_RESERVA, pausaMs: 500 },
+  { modelo: MODELO_RESERVA, pausaMs: 1500 },
+] as const;
+
+/** Tempo máximo de cada chamada ao Claude. */
+const TEMPO_POR_CHAMADA_MS = 12_000;
+/** Prazo total para responder (a função da Vercel tem 60 s, e 8 s já vão na espera). */
+const PRAZO_TOTAL_MS = 42_000;
 
 const INTERESSES = [
   "Agente de IA",
@@ -67,7 +82,10 @@ export type Acoes = {
 export class RespostaIndisponivel extends Error {}
 
 let cliente: Anthropic | null = null;
-const anthropic = () => (cliente ??= new Anthropic());
+// Sem retentativas automáticas do SDK: a ordem e o prazo ficam em TENTATIVAS.
+const anthropic = () => (cliente ??= new Anthropic({ maxRetries: 0 }));
+
+const esperar = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /** Junta o histórico em turnos alternados (cliente → user, IA → assistant). */
 function montarMensagens(historico: Mensagem[]): Anthropic.MessageParam[] {
@@ -87,15 +105,43 @@ function montarMensagens(historico: Mensagem[]): Anthropic.MessageParam[] {
 
 /**
  * Gera a próxima resposta da IA. Executa as ferramentas que ela chamar e
- * devolve o texto final para enviar ao cliente.
+ * devolve o texto final para enviar ao cliente. Se o modelo principal falhar,
+ * tenta de novo e depois passa para o modelo reserva, dentro de PRAZO_TOTAL_MS.
+ *
+ * Repetir a conversa depois de uma falha é seguro: o encaminhamento ao Kleber
+ * só acontece uma vez por conversa (trava em processar.ts).
  */
 export async function responder(
   historico: Mensagem[],
   contexto: ContextoConversa,
   acoes: Acoes,
 ): Promise<string> {
+  if (montarMensagens(historico).length === 0) throw new RespostaIndisponivel("histórico vazio");
+
+  const prazo = Date.now() + PRAZO_TOTAL_MS;
+  const falhas: string[] = [];
+  for (const { modelo, pausaMs } of TENTATIVAS) {
+    if (Date.now() + pausaMs + 3000 > prazo) break;
+    await esperar(pausaMs);
+    try {
+      return await tentar(modelo, historico, contexto, acoes, prazo);
+    } catch (erro) {
+      const motivo = erro instanceof Error ? erro.message : String(erro);
+      falhas.push(`${modelo}: ${motivo}`);
+      console.warn("[agente] tentativa falhou", modelo, motivo);
+    }
+  }
+  throw new RespostaIndisponivel(falhas.join(" | ") || "prazo esgotado");
+}
+
+async function tentar(
+  modelo: string,
+  historico: Mensagem[],
+  contexto: ContextoConversa,
+  acoes: Acoes,
+  prazo: number,
+): Promise<string> {
   const messages = montarMensagens(historico);
-  if (messages.length === 0) throw new RespostaIndisponivel("histórico vazio");
 
   const system: Anthropic.TextBlockParam[] = [
     { type: "text", text: PROMPT_FIXO, cache_control: { type: "ephemeral" } },
@@ -103,14 +149,19 @@ export async function responder(
   ];
 
   for (let volta = 0; volta < 4; volta++) {
-    const resposta = await anthropic().messages.create({
-      model: MODELO,
-      max_tokens: 2048,
-      output_config: { effort: "low" },
-      system,
-      tools: FERRAMENTAS,
-      messages,
-    });
+    const restante = prazo - Date.now();
+    if (restante < 2000) throw new RespostaIndisponivel("prazo esgotado");
+    const resposta = await anthropic().messages.create(
+      {
+        model: modelo,
+        max_tokens: 2048,
+        output_config: { effort: "low" },
+        system,
+        tools: FERRAMENTAS,
+        messages,
+      },
+      { timeout: Math.min(TEMPO_POR_CHAMADA_MS, restante) },
+    );
 
     if (resposta.stop_reason === "refusal") {
       throw new RespostaIndisponivel(`recusa: ${resposta.stop_details?.category ?? "?"}`);
