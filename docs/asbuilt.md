@@ -143,6 +143,19 @@
 
 ---
 
+# 🛡️ AGENTE — Trava contra alucinação
+
+> Spec: `docs/memoria/trava-alucinacao.md` · Plano: `docs/memoria/plano-tarefas-trava.md`
+
+### 🔵 FASE 15: TRAVA + BANCO DE PROVAS
+**Status:** `🔄 Em Andamento` (aguardando "pode publicar")
+**Escopo reduzido por Kleber (2026-11-22):** "Eu quero que o agente de IA responda o que está no prompt. Somente isso." Banco de provas automático e fiscal cancelados.
+- [x] Trava no `prompt.ts`: seção "Responda só com o que está neste texto" (sem completar com conhecimento de fora; perguntas sem resposta no texto → "o Kleber responde melhor"; fora do assunto não responde) + encaminhamento só com os dados que a pessoa disse
+- [x] Conferência única: as 21 pegadinhas da spec rodadas 1× contra a `responder()` real com ações falsas (sem WhatsApp, sem aviso, sem banco). 0 invenções, 0 preço/prazo, 0 promessa; encaminhamentos fiéis; controles (explicar o Agente de IA, atender saúde) respondidos
+- [ ] Publicação com aprovação do Kleber
+
+---
+
 ## Backups e Segurança
 
 | Data | Tag | Tipo | Status |
@@ -195,3 +208,4 @@
 | 2026-11-20 | Prompt ajustado a pedido de Kleber: despedida sem pergunta explícita; perguntas técnicas sobre a própria IA (API oficial, qual IA, dados) → "essa parte técnica o Kleber explica melhor". Testado |
 | 2026-11-20 | Kerberos (modo silencioso): segredos no git ✅, npm audit 0 ✅, cabeçalhos ✅, Supabase trancado (anon/publishable: 401 em leitura e escrita, sem policies, sem SECURITY DEFINER) ✅, 5 tentativas de enganar a IA (prompt, falso Kleber dando preço, aviso-golpe com link, palavrão, fora do escopo) resistidas ✅. Correções aplicadas: token da instância obrigatório no webhook (chamada forjada ignorada), limite de 30 respostas por número em 24 h, texto cortado em 1.500 caracteres, aviso ao Kleber sem links/formatação e com 160 caracteres por campo. APROVADO. Recomendado: teto de gastos no console da Anthropic |
 | 2026-11-20 | Publicado em produção a pedido de Kleber ("pode publicar"): backups `backup-pre-hml-20261120-2016` e `backup-pre-main-20261120-2016`, `main` 8ad4fd4. Site no ar com 17 links para wa.me/5541985046918; rota `/api/whatsapp/webhook` responde 401 sem senha; webhook da UAZAPI apontado para https://yascom.com.br/api/whatsapp/webhook; túnel e servidor local desligados. Checagem em produção: chamada com senha+token do número do Kleber → "ignorada: kleber" nos logs da Vercel. Ravena dispensada. Pendente com Kleber: teto de gastos no console da Anthropic |
+| 2026-11-22 | Shiva: spec da trava contra alucinação + banco de provas (`trava-alucinacao.md`), MoSCoW aprovado. Hades: plano da Fase 15 (`plano-tarefas-trava.md`) e custo cotado. Kleber reduziu o escopo para só a trava. Atlas: trava aplicada no `prompt.ts` e conferida com as 21 pegadinhas (todas ok) |
