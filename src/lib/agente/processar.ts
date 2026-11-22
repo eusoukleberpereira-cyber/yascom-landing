@@ -22,8 +22,8 @@ const LIMITE_RESPOSTAS_24H = 30;
 /** Tempo de espera para juntar mensagens picadas ("oi" / "tudo bem?" / ...). */
 const ESPERA_MS = 8000;
 
-const MENSAGEM_DE_ERRO =
-  "Recebemos sua mensagem. Tivemos uma instabilidade técnica no atendimento, mas o Kleber já foi avisado e entrará em contato em breve.";
+/** Só se o modelo principal e o reserva falharem. Neutra: o cliente não vê erro. */
+const MENSAGEM_DE_ERRO = "Recebemos sua mensagem. O Kleber entrará em contato em breve.";
 
 const TIPOS_DE_MIDIA: Record<string, string> = {
   ImageMessage: "uma imagem",
@@ -155,7 +155,7 @@ export async function processarMensagem(m: MensagemRecebida): Promise<void> {
       },
     );
   } catch (erro) {
-    const motivo = erro instanceof RespostaIndisponivel ? erro.message : "erro da IA";
+    const motivo = erro instanceof RespostaIndisponivel ? erro.message.slice(0, 160) : "erro da IA";
     console.error("[agente] IA não respondeu", erro);
     await enviarTexto(m.telefone, MENSAGEM_DE_ERRO);
     await gravarMensagemIA(atual.id, MENSAGEM_DE_ERRO);
