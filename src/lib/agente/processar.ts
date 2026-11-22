@@ -23,7 +23,7 @@ const LIMITE_RESPOSTAS_24H = 30;
 const ESPERA_MS = 8000;
 
 const MENSAGEM_DE_ERRO =
-  "Recebi sua mensagem! Tive um probleminha técnico aqui, mas já avisei o Kleber e ele vai te chamar 😊";
+  "Recebemos sua mensagem. Tivemos uma instabilidade técnica no atendimento, mas o Kleber já foi avisado e entrará em contato em breve.";
 
 const TIPOS_DE_MIDIA: Record<string, string> = {
   ImageMessage: "uma imagem",
